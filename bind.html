@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    Function.prototype.myBind = function(thisArg){
+      if(typeof this !== 'function'){
+        return;
+      }
+      var _self = this;
+      var args = Array.prototype.slice.call(arguments,1)
+      console.log(Array.prototype.slice.call(arguments))
+      console.log(args)
+      var fnNop = function(){};
+      var fnBound = function(){
+        console.log(this instanceof _self)
+        var _this = this instanceof _self?this:thisArg;
+        console.log(Array.prototype.slice.call(arguments))
+        console.log(123)
+        return _self.apply(_this,args.concat(Array.prototype.slice.call(arguments)));
+      }
+      if(this.prototype){
+        fnNop.prototype = this.prototype;
+      }
+      fnBound.prototype = new fnNop();
+      return fnBound;
+    }
+    function foo(name) {
+      this.name = name;
+    }
+    var obj = {};
+    var bar = foo.myBind(obj);
+    bar('Jack');
+    console.log(obj.name);
+    console.log(bar.name)
+    
+  </script>
+</body>
+</html>

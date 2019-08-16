@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>  
+  var name1;
+  console.log(name1)
+  console.log(window.name1);
+  (function() {
+    // console.log(window.name)
+    // console.log(name)
+      if (typeof name1 == 'undefined') {
+          name1 = 'Jack';
+          console.log('Goodbye ' + name1);
+      } else {
+          console.log('Hello ' + name1);
+      }
+  })();
+  name1 = 'Tom';
+  
+  async function async1() {
+    console.log(2);
+    await async2();
+    console.log(6);//这里可以理解为promise的then微任务
+  }
+  async function async2() {
+    console.log(3);
+  }
+  console.log(1);
+  setTimeout(function() {
+      console.log(8);
+  }, 0);
+  async1();
+  new Promise(function(resolve) {
+    console.log(4);
+    resolve();
+  }).then(function() {
+    console.log(7);
+  });
+  console.log(5);
+  </script>
+</body>
+</html>
