@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //   var a = 10;
+  // (function () {
+  //     console.log(a)
+  //     a = 5
+  //     console.log(window.a)
+  //     var a = 20;
+  //     console.log(a)
+  // })()
+  // function sleep(time){
+  //   return new Promise((resolve,reject) => {
+  //     setTimeout( () => {
+  //       resolve()
+  //     },time)
+  //   })
+  // }
+  // sleep(1000).then(() => {
+  //   console.log(10)
+  // })
+
+  function getNum(flowerbed,n){
+    flowerbed.push(0);
+    flowerbed.unshift(0);
+    let num = 0;
+    let count = 0;
+    for(let i=0,length=flowerbed.length;i<length;i++){
+      if(element === 0){
+        count++;
+      }else{
+        num += Math.floor((count-1)/2);
+        count = 0;
+      }
+      if(index==length-1){
+        num += Math.floor((count-1)/2);
+      }
+      if(num>=n){
+        break;
+      }
+    }
+    return num>=n;
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn1">防抖</button>
+  <button id="btn2">节流</button>
+</body>
+<script>
+//防抖
+function debounce(fn,delay){
+  let timer = null;
+  return (...args) => {
+    if(timer) clearTimeout(timer);
+    timer = setTimeout( () => {
+      fn.apply(this,args)
+    },delay)
+  }
+}
+function action1(){
+  console.log("防抖")
+};
+document.getElementById("btn1").addEventListener("click",debounce(action1,500));
+//节流
+function throttle(fn){
+  let flag = true;
+  return (...args) => {
+    if(!flag) return;
+    flag = false;
+    setTimeout( () => {
+      fn.apply(this,args);
+      flag = true;
+    },500)
+  }
+}
+function action2(){
+  console.log("节流")
+}
+document.getElementById("btn2").addEventListener("click",throttle(action2));
+//实现一个call
+Function.prototype.myCall = function(ctx){
+  ctx = ctx || window;
+  ctx.fn = this;
+  const args = [...arguments].slice(1);// const args = Array.from(arguments).slice(1);
+  ctx.fn(...args);
+  delete ctx.fn;
+}
+// let obj = {
+//     name: "一个"
+// }
+
+// function allName(firstName, lastName) {
+//     console.log(`我的全名是“${firstName}${this.name}${lastName}”`)
+// }
+// allName.myCall(obj,"我是","前端");
+// apply
+Function.prototype.myApply = function(ctx){
+  ctx = ctx || window;
+  ctx.fn = this;
+  ctx.fn(...arguments[1])
+  delete ctx.fn
+}
+// function Person(name,age) {   
+//     this.name=name; this.age=age;   
+// }     
+// function Student(name,age,grade) {   
+//     Person.myApply(this,arguments); this.grade=grade;   
+// }   
+// var student=new Student("qian",21,"一年级");   
+// console.log("name:"+student.name+"\n"+"age:"+student.age+"\n"+"grade:"+student.grade); 
+//bind的实现
+Function.prototype.myBind = function(thisArg){
+  if(typeof this !== 'function'){
+    return;
+  }
+  var _self = this;
+  var args = Array.prototype.slice.call(arguments,1)
+  var fnNop = function(){};
+  var fnBound = function(){
+    var _this = this instanceof _self?this:thisArg;
+    return _self.apply(_this,args.concat(Array.prototype.slice.call(arguments)));
+  }
+  if(this.prototype){
+    fnNop.prototype = this.prototype;
+  }
+  fnBound.prototype = new fnNop();
+  return fnBound;
+}
+// 简单版本
+Function.prototype.myBind2 = function(content){
+  var _this = this;
+  var args = Array.prototype.slice.call(arguments,1)
+  return function(){
+    return _this.apply(content,args.concat(Array.prototype.slice.call(arguments)))
+  }
+}
+function foo(name) {
+this.name = name;
+}
+
+var obj = {}
+
+var bar = foo.myBind2(obj)
+bar('jack')
+console.log(obj.name) //'jack'
+
+</script>
+</html>

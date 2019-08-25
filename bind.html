@@ -8,6 +8,13 @@
 </head>
 <body>
   <script>
+    Function.prototype.thisBind = function(thisArg){
+      if(typeof this !== "function"){
+        return;
+      }
+      let args = Array.prototype.slice.call(thisArg,1);
+      
+    }
     Function.prototype.myBind = function(thisArg){
       if(typeof this !== 'function'){
         return;
