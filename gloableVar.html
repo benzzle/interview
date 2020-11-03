@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(){
+      let a = b = 0;
+      a++
+      return a
+    }
+    foo()
+    console.log(typeof a) //undefined
+    console.log(typeof b) //number
+    const clothes = ['jacket', 't-shirt'];
+    clothes.length = 0;
+
+    console.log(clothes[0]); //undefined
+    console.log(clothes)    //[]
+    function arrayFromValue(item) { //return换行之后会插入一个分号
+      return
+        [item];
+    }
+    console.log(arrayFromValue(10)) //undefined
+  </script>
+</body>
+</html>
