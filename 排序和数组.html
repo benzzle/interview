@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  //单个属性排序
+  function compare(property) {
+    return function (a, b) {
+      let value1 = a[property]
+      let value2 = b[property]
+      return value1 - value2
+    }
+  }
+
+  let test = [
+    { name: 'zopp', age: 10 },
+    { name: 'gpp', age: 18 },
+    { name: 'yjj', age: 8 },
+  ]
+
+  // test.sort(compare('age'))
+  // console.log(test)
+
+
+  let numArr = [1,2,3,4,5,6,7]
+  // function swapItems(arr, index1, index2) {
+  //   arr[index1] = arr.splice(index2, 1, arr[index1])[0]
+  //   return arr
+  // }
+  // swapItems(numArr, 1,4)
+  // console.log(numArr)
+
+  let targetA = Array.from(numArr, x => x + x)
+  console.log(numArr)
+  console.log(targetA)
+  
+  console.log(Array.from(test, x => {
+    x.address='999'
+    return x
+  }))
+
+
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 输出1到400之间所有数字中包含的1的个数
+    function getCount(num) {
+      let count = 0
+      for(let i =1; i <= num; i++){
+        let arr = (i + '').match(/1/g)
+        if(arr){
+          count+=arr.length
+        }
+      }
+      return count
+    }
+
+    // 输出 180
+    console.log(getCount(400))
+    // 还有一个split方法同样的道理
+    console.log(`112233441122`.split('1').length - 1)
+    
+  </script>
+</body>
+</html>

@@ -8,6 +8,29 @@
 </head>
 <body>
   <script>
+
+    console.log('1');
+    setTimeout(function() {
+      console.log('7');
+    }, 0);
+    new Promise( (resolve, reject) => {
+      if(true){
+        resolve();
+      } else{
+        reject();
+      }
+      console.log('2')
+    }).then(() => {
+      console.log('4')
+    })
+    Promise.resolve().then(function() {
+      console.log('5');
+    }).then(function() {
+      console.log('6');
+    });
+    console.log('3');
+
+
   //   var a = 10;
   // (function () {
   //     console.log(a)

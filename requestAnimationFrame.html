@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="times">
+
+  </div>
+  <script>
+    // let dom = document.querySelector("#times")
+    // function begin(time){
+    //   dom.innerHTML = time
+    //   window.requestAnimationFrame(begin);
+    // }
+    // window.requestAnimationFrame(begin);
+_timeAnimation(Date.now(),new Date('2020/10/12 16:06:00').getTime())
+function _timeAnimation(time, timesNum) {
+  var times = (timesNum - time),        // 目标时间和服务器时间的差值
+    timeTemp,                           // 临时时间
+    remain_sec = 0,                     // 秒
+    remain_minute = 0,                  // 分钟
+    remain_hour = 0,                    // 小时
+    timetag = Date.now(),               // 上一帧的时间
+    hour = 0,                           // 最终显示小时
+    min = 0,                            // 最终显示分钟
+    sec = 0,                            // 最终显示秒
+    doms = document.getElementById('times'); // 需要渲染的DOM元素
+
+  timeTemp = parseInt(times / 1000);
+  // 秒数
+  remain_sec = timeTemp % 60;
+  timeTemp = parseInt(timeTemp / 60);
+  // 分数
+  remain_minute = timeTemp % 60;
+  timeTemp = parseInt(timeTemp / 60);
+  // 小时数
+  remain_hour = timeTemp % 24;
+  timeTemp = parseInt(timeTemp / 24);
+
+  function begin() {
+    console.log(Date.now() - timetag)
+    if ((Date.now() - timetag) >= 1000) {
+      times = timesNum - Date.now();
+      timeTemp = parseInt(times / 1000);
+      // 秒数
+      remain_sec = timeTemp % 60;
+      timeTemp = parseInt(timeTemp / 60);
+      // 分数
+      remain_minute = timeTemp % 60;
+      timeTemp = parseInt(timeTemp / 60);
+      // 小时数
+      remain_hour = timeTemp % 24;
+      timeTemp = parseInt(timeTemp / 24);
+      //   当时间结束后倒计时停止
+      if ((remain_minute <= 0) && (remain_sec <= 0) && (remain_hour <= 0)) {
+          remain_minute = remain_sec = remain_hour = 0;
+          return;
+      }
+      timetag = Date.now();
+      hour = transToDouble(remain_hour)
+      min = transToDouble(remain_minute)
+      sec = transToDouble(remain_sec)
+      console.log('fenzhong')
+      doms.innerHTML = hour + ':' + min + ':' + sec;
+    }
+    
+    window.requestAnimationFrame(begin);
+  }
+  window.requestAnimationFrame(begin);
+}
+function transToDouble(num) {
+  if (num < 10) {
+    return '0' + num;
+  } else {
+    return num;
+  }
+}
+  </script>
+</body>
+</html>

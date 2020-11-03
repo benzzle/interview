@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  html, body{
+    padding: 0;
+    margin: 0;
+  }
+  </style>
+</head>
+<body>
+  <!-- <img src="./test.png" alt=""> -->
+  <canvas id="canvas" height="200" width="350">对不你，你的浏览器不支持Canvas</canvas>
+  <script>
+    let ctxt = canvas.getContext('2d');
+    let img = new Image;
+    img.src = './test.png'; //图片路径
+    img.onload = function(){
+      ctxt.drawImage(img, 0, 0);  //将图片画如canvas
+      let data = ctxt.getImageData(0, 0, 350, 200).data;//读取整张图片的像素。
+      console.log(data[0])
+      console.log(data)
+    } 
+   
+
+  </script>
+</body>
+</html>

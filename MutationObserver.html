@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .app{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            transition: all 1s linear;
+        }
+        .app.move{
+            width: 400px;
+            height: 400px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="app"></div>
+    <button id="btn">改变</button>
+</body>
+<script>
+    let el = document.getElementById("app");
+    let observer = new MutationObserver(()=>{
+        alert('change')
+    });
+    // 开始监视
+    observer.observe(el, { childList: true, subtree: true });
+    document.getElementById("btn").addEventListener("click",function(){
+        console.log(el.classList.contains("move"))
+        if(el.classList.contains("move")){
+            el.classList.remove("move")
+        }else{
+            el.classList.add("move")
+        }
+        setTimeout(function(){
+            el.innerHTML = '<div>2秒添加内容</div>'
+        },2000)
+    })
+</script>
+</html>

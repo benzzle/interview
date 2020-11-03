@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="h1"></h1>
+  <script>
+    // proxy
+    let obj = {
+      name: '张三'
+    }
+    obj = new Proxy(obj, {
+      get(target, key){
+        if(key === 'name'){
+          return target[key] = '李四'
+        }
+      }
+    })
+
+    document.getElementById("h1").innerText = obj.name
+    // Object.defineProperty
+   // 状态码提示信息
+    const errorMessage = {
+      400: '错误请求',
+      401: '系统未授权，请重新登录',
+      403: '拒绝访问',
+      404: '请求失败，未找到该资源'
+    }
+
+    const proxy = new Proxy(errorMessage, {
+      get(target,key) {
+        console.log('target===', target)
+        console.log('keyyyyyy===', key)
+        const value = target[key]
+        return value || '系统异常，请联系管理员'
+      }
+    })
+
+    // 输出 错误请求
+    console.log(proxy[400])
+    // 输出 系统异常，请联系管理员
+    console.log(proxy[500])
+
+  </script>
+</body>
+</html>

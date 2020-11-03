@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let str = "(()";
+    
+    function getStr(s) {
+        let arr = s.split("");
+        let result = [];
+        for (let i = 0, length = arr.length; i < length - 1; i++) {
+            if (arr[i] === "(" && arr[i + 1] === ")") {
+                result.push(true);
+                i++
+            }else{
+                result.push(false)
+            }
+        }
+        console.log(result)
+        let maxArr = [];
+        let max = 0;
+        let beTrue = false;
+        for(let i = 0, length = result.length; i<length;i++){
+            if(result[i]){
+                if(beTrue){
+                    max += 2;
+                }else{
+                    max = 2
+                }
+                beTrue = true;
+            }else{
+                if(i>0){
+                    if(beTrue){
+                        maxArr.push(max);
+                    }
+                    max = 0;
+                    beTrue = false;
+                }
+            }
+            if(i == length-1){
+                maxArr.push(max);
+            }
+        }
+        console.log(maxArr);
+        return Math.max(maxArr);
+        
+    }
+    getStr(str);
+</script>
+
+</html>
