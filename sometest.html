@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .row {
+
+    position: relative;
+    height: 300px;
+    width: 300px;
+  }
+
+  .row:after{
+    content: "";
+    position: absolute;
+    left: 0;
+
+    top: 0;
+    width: 200%;
+    border-bottom:1px solid #e6e6e6;
+    color: red;
+    height: 200%;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    pointer-events: none; /* 防止点击触发 */
+    box-sizing: border-box;
+  }
+  </style>
+</head>
+<body>
+  <div class="row">
+
+  </div>
+</body>
+</html>
