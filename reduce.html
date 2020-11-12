@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let configs = [
+      {
+        "name": "资源配置",
+        "code": "ban_ping_pei_zhi_a",
+        "checked": true,
+        "value": "",
+        "childList": [
+          {
+            "name": "资源页",
+            "code": "zi_yuan_ye",
+            "checked": false,
+            "value": "",
+            "childList": [],
+            "rename": "",
+            "sort": "3"
+          },
+          {
+            "name": "历史作业",
+            "code": "LI_SHI_ZUO_YE",
+            "checked": false,
+            "value": "",
+            "childList": [],
+            "rename": "",
+            "sort": "3"
+          },
+          {
+            "name": "个人题库",
+            "code": "GE_REN_TI_KU",
+            "checked": false,
+            "value": "",
+            "childList": [],
+            "rename": "",
+            "sort": "3"
+          },
+          {
+            "name": "导入paper",
+            "code": "DAO_RU_PAPER",
+            "checked": false,
+            "value": "",
+            "childList": [],
+            "rename": "",
+            "sort": "3"
+          },
+          {
+            "name": "智能组",
+            "code": "zhi_neng_zu",
+            "checked": false,
+            "value": "",
+            "childList": [],
+            "rename": "",
+            "sort": "3"
+          }
+        ]
+      }
+    ]
+    function parseConfig(configs) {
+      console.log(1)
+      return configs.reduce((result, config) => {
+        console.log('11111', result)
+        result[config.code] = Object.assign({}, config, {
+          sub: parseConfig(config.childList)
+        })
+        console.log('2222', result)
+        return result
+      }, {})
+    }
+    console.log(parseConfig(configs))
+  </script>
+</body>
+</html>
