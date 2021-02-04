@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+
+      div {
+        position: relative;
+        width: 140px;
+        height: 64px;
+        margin: auto;
+      }
+
+      .gradient {
+        background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+          linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+          linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+          linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+        background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+        background-position: 0 0, 0 100%, 0 0, 100% 0;
+        cursor: pointer;
+      }
+      .gradient:hover {
+        animation: linearGradientMove 0.3s infinite linear;
+      }
+
+      .outline {
+        outline: 1px solid #333;
+        outline-offset: -1px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+      }
+      .outline:hover {
+        outline: 1px solid transparent;
+        background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+          linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+          linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+          linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+        background-size: 4px 1px, 4px 1px, 1px 4px, 1px 4px;
+        background-position: 0 0, 0 100%, 0 0, 100% 0;
+        animation: linearGradientMove 0.3s infinite linear;
+      }
+
+      @keyframes linearGradientMove {
+        100% {
+          background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="gradient"></div>
+    <div class="outline"></div>
+  </body>
+</html>

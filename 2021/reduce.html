@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root{
+      --primary-color: olive;
+      background: pink;
+    }
+    html, body{
+      background-color: red;
+    }
+    .next{
+      color: var(--primary-color)
+    }
+  </style>
+</head>
+<body>
+  <div class="next">
+    reduce
+  </div>
+
+  <script>
+    const shortArr = [1,2,3,4]
+    const longArr = [1,2,3,5,6,8,3,4,5,6,1,2,5,7,9,4]
+    // reduce计算
+    const result = shortArr.reduce( (total, cur) => {
+      return total + cur
+    })
+    console.log(result)
+    // reduce计算数组中每个数字出现的次数
+    const resultObj = longArr.reduce( (acc, cur) => {
+      if(acc[cur]){
+        acc[cur] ++
+      }else {
+        acc[cur] = 1
+      }
+      return acc
+    },{})
+    console.log(resultObj)
+    // reduce实现map
+    Array.prototype.reduceMap = function (callback){
+      return this.reduce((acc, cur, index, arr) => {
+        const item = callback(cur, index, arr)
+        acc.push(item)
+        return acc
+      },[])
+    }
+    {
+      const resultArr = [].reduceMap( (item, index) => {
+        return item + index
+      })
+      console.log('代码块中的shortArr', shortArr)
+      console.log('代码块中的resultArr', resultArr)
+    }
+    // reduce实现forEach
+    Array.prototype.reduceForEach = function(callback) {
+      return this.reduce( (acc, cur, index, arr) => {
+        callback(cur, index, arr)
+      })
+    }
+
+
+  </script>
+</body>
+</html>
