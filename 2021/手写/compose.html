@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // compose指的是传入多个函数，compose(fn1,fn2,fn3)(1,2,3,4)
+  // 执行顺序从右向左，左侧函数接收上一个函数的返回值并传入
+  // 只有最右侧的第一个函数可以接收多个参数，其余只能接收一个
+  function fn1(...args){
+    return args.reduce((prev, cur) => prev+cur)
+  }
+  function fn2(x){
+    return x*2
+  }
+  function fn3(x){
+    return x*3
+  }
+  const compose = function(...funcs){
+    const length = funcs.length // 保持一个常量
+    let index = length
+    while(index--){
+      if(typeof funcs[index]!== 'function'){
+        throw new TypeError('Expected a function')
+      }
+    }
+    return function(...args){
+      let index  = length - 1
+      var result = length?funcs[index].apply(this,args):args[0]
+      while(--index >= 0){
+        result = funcs[index].call(this, result)
+      }
+      return result
+    }
+  }
+  console.log(compose(fn1)(1,2,3))
+  console.log(compose()(1,2))
+  console.log(compose(fn3, fn2, fn1)(1,1))
+</script>
+</body>
+</html>

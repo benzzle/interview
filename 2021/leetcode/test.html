@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <video src="//vodmedia.speiyou.com/c9dac8c04bef48829ccc0fb174dfeca6/dc53df0d170ab090db319f4b5f4e26f5-sd-encrypt-stream.m3u8?auth_key=1618391440-0-0-3d803b45f59c05a2c13f27d527bc1581"></video>
+<script>
+  let a = [1,2,3,5,5]
+  let b = [3,4,5,6,7,8,9]
+  // function sort(a,b) {
+  //   for( let i = 0; i < a.length; i++){
+  //     let j = 0
+  //     while( a[i] > b[j] && j < b.length-1){
+  //       j++
+  //     }
+  //     b.splice(j, 0, a[i])
+  //   }
+  //   return b
+  // }
+
+  // console.log(sort(a, b))
+
+  function sort1(a, b) {
+    let rightA = a.length - 1
+    let rightB = b.length - 1
+    let result = []
+    while(rightA >= 0 || rightB >= 0){
+      if( rightA === -1){
+        result.unshift(b[rightB--])
+      } else if(rightB === -1){
+        result.unshift(a[rightA--])
+      } else if(a[rightA] >= b[rightB]){
+        result.unshift(a[rightA--])
+      }else{
+        result.unshift(b[rightB--])
+      }
+    }
+    return result
+  }
+
+
+
+let len = 3
+console.log('start')
+while(len--){
+  console.log('这是啥', len===0)
+  console.log(len)
+}
+
+</script>
+</body>
+</html>

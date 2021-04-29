@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+
+// 简单版本的--面试最好不要用这种方式
+function sort(arr){
+  if(arr.length<2) return arr
+  let mid = Math.floor(arr.length/2)
+  let minVal = arr.splice(mid,1)[0]
+  let L = []
+  let R = []
+  for( let i = 0; i < arr.length; i++){
+    if(arr[i] < minVal){
+      L.push(arr[i])
+    }else{
+      R.push(arr[i])
+    }
+  }
+  return sort(L).concat([minVal], sort(R))
+}
+console.log(sort([1,2,3,4,5,9,6,8,7,1,300,23,56,78,45]))
+
+function swap(arr, i, j){
+  [arr[i], arr[j]] = [arr[j], arr[i]]
+}
+
+function quickSort(arr,left=0,right=arr.length-1){
+  if(arr.length > 1){
+    var pivot = arr[left];
+    var start = left;
+    var end = right;
+    while(end > start){
+      while(end > start && arr[end] >= pivot) end--;
+      if(arr[end]<=pivot){
+        swap(arr, end, start)
+      }
+      while(end > start && arr[start] <= pivot) start++;
+      if(arr[start]>=pivot){
+        swap(arr, end, start)
+      }
+    }
+    if(start>left) quickSort(arr,left,start-1);
+    if(end<right) quickSort(arr,end+1,right);
+  }
+  return arr
+}
+console.log(quickSort([1,2,3,4,5,9,6,8,7,1,300,23,56,78,45]))
+
+function quickSort1(arr, left=0, right=arr.length-1) {
+    var len = arr.length,
+        partitionIndex;
+    if (left < right) {
+        partitionIndex = partition1(arr, left, right);
+        quickSort(arr, left, partitionIndex - 1);
+        quickSort(arr, partitionIndex + 1, right);
+    }
+    return arr;
+}
+function partition1(arr, left, right) {
+    var pivot = left,
+        index = pivot + 1;
+    for (var i = index; i <= right; i++) {
+        if (arr[i] < arr[pivot]) {
+            swap1(arr, i, index);
+            index++;
+        }
+    }
+    swap1(arr, pivot, index - 1);
+    return index - 1;
+}
+/*
+ * 普通的交换，将a[i]和a[j]的数值交换；
+ */
+function swap1(arr, i, j) {
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+console.log('2222', quickSort1([1,2,3,4,5,9,6,8,7,1,300,23,56,78,45]))
+</script>
+</body>
+</html>

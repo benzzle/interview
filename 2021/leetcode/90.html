@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var subsetsWithDup = function(nums) {
+    let result = [];
+    for(let i= 0; i < nums.length; i++){
+        let j = i+1
+        while(j < nums.length+1){
+            result.push(nums.slice(i,j).join('-'))
+            j++
+        }
+        result = [...new Set(result)]
+    }
+    let index = 0
+    while(index < result.length){
+      result[index] = result[index].split('-')
+      index++
+    }
+    result.unshift([])
+    return result
+};
+console.log(subsetsWithDup([1,2,1,2,1,2,3]))
+  </script>
+</body>
+</html>

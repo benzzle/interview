@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>&nbsp;<video controls="controls" controlslist="nodownload" src="http://vodmedia.speiyou.com/9e4e840caf7846ddad5294776d8ff155/6d1b1253524498563dd20163e6c44c42-ld-encrypt-stream.m3u8" video-id="0f199ee1c16c4fff8a598e12189551e8" video-source="shipinku" >&nbsp;</video></p><p>&nbsp;</p>
+<script>
+  function find(arr, target){
+    let right = arr.length - 1
+    let left = 0
+    arr.sort((a, b) => a - b)
+    while(left <= right){
+      let midIndex = Math.floor((right+left)/2) // 这一步计算是left+right
+      let mid = arr[midIndex]
+      if(mid === target){
+        return midIndex
+      }else if(mid > target){
+        right = midIndex - 1
+      }else{
+        left = midIndex + 1
+      }
+    }
+    return -1
+  }
+  console.log(find([1,2,3,4,6,8],4))
+  console.log([1,2,3,4,6,8].indexOf(4))
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+// 反转链表
+var reverseList = function(head){
+  let cur = head
+  let prev = null
+  while(cur){
+    let next = cur.next
+    cur.next = prev
+    prev = cur
+    cur = next
+  }
+  return prev
+}
+
+
+var reverseDeep = function(head){
+  if(!head || !head.next){
+    return head
+  }
+  const newHead = reverseDeep(head.next)
+  head.next.next = head
+  head.next = null
+  return newHead
+}
+</script>
+</body>
+</html>

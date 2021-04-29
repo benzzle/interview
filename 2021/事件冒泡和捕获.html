@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>事件冒泡</title>
+  </head>
+  <body>
+    <div>
+      <p id="parEle">我是父元素 <span id="sonEle">我是子元素</span></p>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  var sonEle = document.getElementById("sonEle");
+  var parEle = document.getElementById("parEle");
+
+  parEle.addEventListener(
+    "click",
+    function () {
+      alert("父级 冒泡");
+    },
+    false
+  );
+  parEle.addEventListener(
+    "click",
+    function () {
+      alert("父级 捕获");
+    },
+    true
+  );
+
+  sonEle.addEventListener(
+    "click",
+    function () {
+      alert("子级冒泡");
+    },
+    false
+  );
+  sonEle.addEventListener(
+    "click",
+    function () {
+      alert("子级捕获");
+    },
+    true
+  );
+
+  let p1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("success");
+    }, 1000);
+  });
+
+  let p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("failed");
+    }, 500);
+  });
+
+  Promise.race([p1, p2])
+    .then((result) => {
+      console.log("success", result);
+    })
+    .catch((error) => {
+      console.log("error", error); // 打开的是 'failed'
+    });
+    getData()
+  async function getData() {
+    const response = await fetch(
+      "https://weilaipaper-fz.jiaoyanyun.com/paper/getStatus",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
+          "cookie": "_tal_jy_uuid_=87512bde-650a-4324-9b04-39fe93c25a92; JSESSIONID=CCE725E31DE6ED54242CAAA52FF6582A; SERVERID=7bdc0950e22e66caab0c60ac1d36df71|1615791587|1615775985"
+        },
+        body: JSON.stringify({
+          paperId: "f6e3dd644fe848dd8f54f4dcf3d2f09c"
+        }),
+        referrer: "about:client",
+        referrerPolicy: "no-referrer-when-downgrade",
+        mode: "cors",
+        credentials: "include",
+        cache: "default",
+        redirect: "follow",
+        integrity: "",
+        keepalive: false,
+        signal: undefined,
+      }
+    );
+    console.log('response', response)
+  }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  var firstMissingPositive = function(nums) {
+    let minNum = 1
+    const numsLen = nums.length;
+    for( let i=0; i<numsLen;i++){
+        let tem
+        for(let j=0;j<numsLen-i;j++){
+            if(nums[j]<nums[j+1]){
+                tem = nums[j+1]
+                nums[j+1] = nums[j]
+                nums[j] = tem
+            }
+        }
+        console.log(nums)
+        const lastNum = nums[numsLen-1-i]
+        if(lastNum >= 1) {
+          if(lastNum === minNum){
+            minNum ++
+          }
+          if(lastNum > minNum) break
+        }
+    }
+    console.log(minNum)
+    return minNum
+};
+firstMissingPositive([0,2,2,1,1])
+</script>
+</body>
+</html>

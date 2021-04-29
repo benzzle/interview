@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .inner{
+      color: red;
+      background-color: cornflowerblue;
+    }
+    .inner{
+      /* 感觉这个属性并不好，调试的时候不知道有效属性了 */
+      all: initial;
+    }
+
+
+  </style>
+
+</head>
+<body>
+  <div class="main">
+    <div class="inner">
+      一个段落测试css的all
+    </div>
+  </div>
+  <script>
+    const now = Date.now()
+    // setTimeout( () => {
+    //   console.log(Date.now() - now)
+    // },0)
+    // setTimeout(() => {
+    //   setTimeout(() => {
+    //     setTimeout(() => {
+    //       setTimeout(() => {
+    //         setTimeout(() => {
+    //           setTimeout(() => {
+    //             console.log('8', Date.now() - now)
+    //           }, 0)
+    //         }, 0)
+    //       }, 0)
+    //     }, 0)
+    //   }, 0)
+    // },0)
+
+    // setTimeout(() => {
+    //   setTimeout(() => {
+    //     setTimeout(() => {
+    //       console.log('7', Date.now() - now)
+    //     }, 0)
+    //   }, 0)
+    // }, 0)
+
+
+            setTimeout(() => {
+              setTimeout(() => {
+                console.log('6', Date.now() - now)
+              }, 0)
+            }, 0)
+
+    // setTimeout( () => {
+    //   console.log('5', Date.now() - now)
+    // },5)
+    setTimeout( () => {
+      console.log('4', Date.now() - now)
+    },4)
+    setTimeout( () => {
+      console.log('3', Date.now() - now)
+    },3)
+    setTimeout( () => {
+      console.log('2', Date.now() - now)
+    },2)
+    setTimeout( () => {
+      console.log('1', Date.now() - now)
+    },1)
+    setTimeout( () => {
+      console.log('0', Date.now() - now)
+    },0)
+  </script>
+</body>
+</html>

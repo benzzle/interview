@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+var minimumTotal = function(triangle) {
+  const triangleLength = triangle.length
+  var dp = new Array(triangleLength+1).fill(0);
+  for(var i = triangleLength-1;i >= 0;i--){
+      for(var j = 0;j < triangle[i].length;j++){
+          dp[j] = Math.min(dp[j],dp[j+1]) + triangle[i][j];
+      }
+  }
+  return dp[0];
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+function debounce(fn, delay) {
+  var ctx;
+  var args;
+  var timer = null;
+
+  var later = function () {
+    fn.apply(ctx, args);
+    // 当事件真正执行后，清空定时器
+    timer = null;
+  };
+
+  return function () {
+    ctx = this;
+    args = arguments;
+    // 当持续触发事件时，若发现事件触发的定时器已设置时，则清除之前的定时器
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+
+    // 重新设置事件触发的定时器
+    timer = setTimeout(later, delay);
+  };
+}
+
+
+function throttle(fn, delay) {
+  var ctx;
+  var args;
+  // 记录上次触发事件
+  var previous = Date.now();
+
+  var later = function () {
+    fn.apply(ctx, args);
+  };
+
+  return function () {
+    ctx = this;
+    args = arguments;
+    var now = Date.now();
+    // 本次事件触发与上一次的时间比较
+    var diff = now - previous - delay;
+
+    // 如果隔间时间超过设定时间，即再次设置事件触发的定时器
+    if (diff >= 0) {
+      // 更新最近事件触发的时间
+      previous = now;
+      setTimeout(later, delay);
+    }
+  };
+}
+
+
+function throttle(fn, time=200){
+  let flag = false
+  return function(...args){
+    if(!flag){
+      flag = true
+      setTimeout(() => {
+        flag = false
+        fn.call(this,...args)
+      }, time)
+    }
+
+  }
+}
+
+function deepClone(obj){
+  let result
+  if(obj instanceof Object){
+    const constructor = obj.constructor
+    switch (constructor) {
+      case Object:
+        result = {}
+        for(let key in obj){
+          result[key] = deepClone(obj[key])
+        }
+        break;
+      case Date:
+        result = new Date(obj)
+        break;
+      case Array:
+        result = []
+        for(let item of obj){
+          result.push(deepClone(item))
+        }
+        break;
+      case RegExp:
+        result = new RegExp(obj)
+        break;
+      case Function:
+        result = function(){
+          return obj.apply(this, arguments)
+        }
+        break
+      default:
+        break;
+    }
+  }else{
+    result = obj
+  }
+  return result
+}
+deepClone({
+  date: new Date(),
+
+})
+
+  </script>
+</body>
+</html>

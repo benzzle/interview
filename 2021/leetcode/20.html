@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var isValid = function(s) {
+  const length = s.length
+  if(length === 0 || length %2 === 1) return false
+  let map = new Map()
+  map.set(')','(')
+  map.set(']','[')
+  map.set('}','{')
+  const arr = s.split('')
+  let result = []
+  for(let i = 0; i < length; i++){
+    if(map.has(arr[i])){
+      if(i === 0 || map.get(arr[i]) !== result[result.length-1]) return false
+      result.pop()
+    }else{
+      result.push(arr[i])
+    }
+  }
+  return !result.length
+};
+console.log(isValid("{[]}"))
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+function createArray(num){
+  let result = []
+  let index = 0
+  while(result.length !== num){
+    let randomNum = Math.round(Math.random()* 30) + 2
+    result.push(randomNum)
+    console.log(index++)
+    result = [...new Set(result)]
+
+  }
+  return result
+}
+setInterval( () => {
+  console.log(createArray(12).sort( (a,b)=> a-b))
+}, 3000)
+
+</script>
+</html>

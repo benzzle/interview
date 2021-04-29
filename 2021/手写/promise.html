@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+const FULFILLED = 'fulfilled'
+const REJECTED = 'rejected'
+const PENDING = 'pending'
+class myPromise2 {
+  constructor(executor){
+    try{
+      executor(this.resolve.bind(this),this.reject.bind(this))
+    } catch(reason){
+      this.reject(reason)
+    }
+
+  }
+
+  status = PENDING
+
+  value = null
+
+  reason = null
+
+  onFulfilledCallbacks = []
+
+  onRejectedCallBacks = []
+
+  resolve(value){
+    if(this.status === PENDING){
+      this.status = FULFILLED
+      this.value = value
+      while(this.onFulfilledCallbacks.length){
+        this.onFulfilledCallbacks.shift()(value)
+      }
+      // this.onFulfilledCallbacks.map(cb => cb(this.value))
+    }
+  }
+  static resolve (parameter) {
+    // 如果传入 MyPromise 就直接返回
+    if (parameter instanceof MyPromise) {
+      return parameter;
+    }
+
+    // 转成常规方式
+    return new myPromise2(resolve =>  {
+      resolve(parameter);
+    });
+  }
+  reject(reason){
+    if(this.status === PENDING){
+      this.status = REJECTED
+      this.reason = reason
+      while(this.onRejectedCallBacks.length){
+        this.onRejectedCallBacks.shift()(value)
+      }
+      // this.onRejectedCallBacks.map(cb => ca(this.reason))
+    }
+  }
+  // reject 静态方法
+  static reject (reason) {
+    return new myPromise2((resolve, reject) => {
+      reject(reason);
+    });
+  }
+
+  // 私有方法
+  #resolvePromise(result, resolve, reject){
+
+    if(result instanceof myPromise2){
+      result.then(resolve, reject) // 是下面的简写
+      // result.then(value => resolve(value), reason => reject(value))
+    }else{
+      resolve(result)
+    }
+  }
+
+  then(onFulfilled, onRejected){
+    return new myPromise2(( resolve, reject) => {
+      switch(this.status){
+        case PENDING:
+          this.onFulfilledCallbacks.push(onFulfilled)
+          this.onRejectedCallBacks.push(onRejected)
+          break
+        case FULFILLED:
+          const result = onFulfilled(this.value)
+          this.#resolvePromise(result,resolve,reject)
+          break
+        case REJECTED:
+          console.log('onRejected')
+          onRejected(this.reason)
+          break
+        default:
+          break
+      }
+    })
+  }
+}
+
+
+// promise.all的实现
+Promise.prototype.all1 = function( promises ) {
+  return new Promise((resolve, reject) => {
+    let result = []
+    for(let i = 0; i < promises.length; i++){
+      Promise.resolve(promises[i]).then((res) => {
+        result.push(res)
+        if(i === promises.length -1){
+          resolve(result)
+        }
+      }, (err) => {
+        reject(err)
+      })
+    }
+  })
+}
+
+
+  </script>
+</body>
+</html>

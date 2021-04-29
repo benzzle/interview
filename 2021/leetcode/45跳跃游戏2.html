@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+let arr = [2,3,1,1,4]
+function jump(nums){
+  let step = 0
+  let max = 0 // 最远距离的index
+  let endIndex = 0  // 可到达的最远下标（用来记录当前下标范围内的最大值）
+  for(let i = 0, len = nums.length;i<len-1; i++){
+    max = Math.max(max, nums[i]+i)
+    if(max >= len-1) return step
+    if(i === endIndex){
+      endIndex = max
+      step++
+    }
+  }
+  return step
+}
+
+</script>
+</body>
+</html>

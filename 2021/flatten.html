@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+  // const theArr = [1,2,[3,4],[5,[6,7,[8,[9,10]]]]]
+  // console.log(theArr.toString().split(',').map(Number))
+  // console.log([...new Set(theArr.flat(Infinity).sort((a,b)=>a-b))])
+  // function flat(arr){
+  //   while( arr.some(item => Array.isArray(item))){
+  //     console.log(...arr)
+  //     arr = [].concat(...arr)
+  //     console.log(arr)
+  //   }
+  //   return arr
+  // }
+  // console.log('最后', flat(theArr))
+
+  var findComplement = function(num) {
+    const stringNum = num.toString(2)
+    console.log(stringNum)
+    let result = ''
+    for(const item of stringNum){
+        result += (item==='1'?0:1)
+    }
+    return parseInt(result,2)
+};
+</script>
+</html>

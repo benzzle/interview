@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  function NodeList(val, next){
+    this.val = val || null
+    this.next = next || null
+  }
+// 反转链表
+function reverseList(head){
+  let prev = null
+  let cur = head
+  while(cur){
+    const next = cur.next
+    cur.next = prev
+    prev = cur
+    cur = next
+  }
+  return prev
+}
+// 删除指定节点
+function deleteNode(head,val){
+  if(head.val === val){
+    return head.next
+  }
+  head.next = deleteNode(head.next, val)
+  return head
+}
+// 部分反转链表
+function reverseListNode(head,m,n){
+  let dummyNode = new Node(-1)
+  dummyNode.next = head
+  let prev = dummyNode
+  for(let i = 0; i < m-1; i++){
+    prev = prev.next
+  }
+  let cur = prev.next
+  for(let i =0; i< n-m; i++){
+    let next = cur.next
+    cur.next = next.next
+    next.next = prev.next
+    prev.next = next
+  }
+  return dummyNode.next
+}
+</script>
+</body>
+</html>

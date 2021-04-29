@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+//   function TreeNode(val, left, right) {
+//     this.val = (val===undefined ? 0 : val)
+//     this.left = (left===undefined ? null : left)
+//     this.right = (right===undefined ? null : right)
+//  }
+var findTilt = function(root) {
+  let slopeArray = [] // 用于存储所有非空节点的坡度
+  console.log('====================')
+  let depthDiff = function (node) {
+    console.log('进入depthDiff')
+      if (!node) {
+          return 0 // 返回节点的 val 和，空节点即为 0
+      }
+      let L = depthDiff(node.left) // 处理左节点
+      let R = depthDiff(node.right) // 处理右节点
+      console.log('abs------', Math.abs(L - R))
+      slopeArray.push(Math.abs(L - R)) // 记录当前节点的坡度
+      console.log('return===',L, R,node.val,  L + R + (node.val||0))
+      return L + R + (node.val || 0) // 返回当前节点的所有 val 和
+  }
+  depthDiff(root)
+  // 遍历计算所有坡度的总和
+  let slopeNum = 0
+  for (let i = 0; i < slopeArray.length; i++) {
+      slopeNum += slopeArray[i]
+  }
+  return slopeNum
+};
+const node = {
+  left: {
+    left: {
+      val: 2,
+      left: 4,
+      right: 7
+    },
+    right: {
+      val: 3,
+      left: {
+        val: 1,
+        right: 2,
+        left: 4
+      },
+      right: 6
+    }
+  },
+  right: {
+    val: 3,
+    left: 1,
+    right: 8
+  },
+  val: 6
+}
+console.log(findTilt(node))
+
+</script>
+</html>

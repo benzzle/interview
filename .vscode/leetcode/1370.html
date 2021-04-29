@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/**
+* @param {string} s
+* @return {string}
+*/
+var sortString = function(s) {
+  if(!s) return ''
+  let sArr = s.split('')
+  const result = range(sArr, '', true)
+  return result
+};
+
+
+function range(arr, result, flag) {
+  if(!arr.length) return result
+  if(flag) {arr.sort()} else{
+    arr.sort().reverse()
+  }
+  let resultArr = []
+  arr.forEach((element, index) => {
+    if(index > 0 && element === arr[index-1]){
+      resultArr.push(element)
+    }else{
+      result += element
+    }
+  });
+  if(resultArr.length){
+    return range(resultArr, result, !flag)
+  }else{
+    return result
+  }
+}
+
+
+
+var sortString1 = function(s) {
+    var h = Object.create(null), ks, i, r = [], l
+    for (var v of s) h[i = v.charCodeAt()] = (h[i] || 0) + 1
+    ks = Object.keys(h), l = ks.length
+    while(r.length < s.length) {// 结果数组长度 = 字符串长度 结束
+        for (i = 0; i < l; i++)
+            if(h[ks[i]]) r.push(ks[i] | 0), h[ks[i]]--
+        while (i--)
+            if(h[ks[i]]) r.push(ks[i] | 0), h[ks[i]]--
+    }
+    return String.fromCharCode(...r)
+};
+console.log(sortString1('aaaabbbbccccs'))
+</script>
+</html>

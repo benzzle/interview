@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Definition for singly-linked list.
+       * function ListNode(val) {
+       *     this.val = val;
+       *     this.next = null;
+       * }
+       */
+      var reverseKGroup = function (head, k) {
+        let cur = head;
+        let count = 0;
+        // 求k个待反转元素的首节点和尾节点
+        while (cur != null && count != k) {
+          cur = cur.next;
+          count++;
+        }
+        // 足够k个节点，去反转
+        if (count == k) {
+          // 递归链接后续k个反转的链表头节点
+          cur = reverseKGroup(cur, k);
+          while (count != 0) {
+            count--;
+            // 反转链表
+            let tmp = head.next;
+            head.next = cur;
+            cur = head;
+            head = tmp;
+          }
+          head = cur;
+        }
+        return head;
+      };
+      var reverseKGroup = function (head, k) {
+        if (!head) return null;
+        // 反转链表
+        let reverse = (a, b) => {
+          let pre;
+          let cur = a;
+          let next = b;
+          while (cur != b) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+          }
+          return pre;
+        };
+        // 反转区间a-b的k个待反转的元素
+        let a = head;
+        let b = head;
+        for (let i = 0; i < k; i++) {
+          // 不足k个，不需要反转
+          if (!b) return head;
+          b = b.next;
+        }
+        // 反转前k个元素
+        let newHead = reverse(a, b);
+        // 递归链接后续反转链表
+        a.next = reverseKGroup(b, k);
+        return newHead;
+      };
+      var reverseKGroup = function (head, k) {
+        let stack = [];
+        let preHead = new ListNode(0);
+        let pre = preHead;
+        // 循环链接后续反转链表
+        while (true) {
+          let count = 0;
+          let tmp = head;
+          while (tmp && count < k) {
+            stack.push(tmp);
+            tmp = tmp.next;
+            count++;
+          }
+          // 不够k个，直接链接剩下链表返回
+          if (count != k) {
+            pre.next = head;
+            break;
+          }
+          // 出栈即是反转
+          while (stack.length > 0) {
+            pre.next = stack.pop();
+            pre = pre.next;
+          }
+          pre.next = tmp;
+          head = tmp;
+        }
+        return preHead.next;
+      };
+
+
+
+
+    </script>
+  </body>
+</html>

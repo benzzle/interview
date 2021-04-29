@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  class NodeList {
+    constructor(val){
+      this.val = (val || 0)
+      this.next = null
+    }
+  }
+var revertList = function(head, left, right) {
+  const oriNode = new NodeList(-1)
+  oriNode.next = head
+  let prev = oriNode.next
+  for(let i = 0; i < left - 1; i++){
+    prev = prev.next
+  }
+  let cur = prev.next
+  for(let i = 0; i < right - left; i++){
+    const next = cur.next
+    cur.next = next.next
+    next.next = prev.next
+    prev.next = next
+  }
+  return oriNode.next
+
+
+}
+</script>
+</body>
+</html>

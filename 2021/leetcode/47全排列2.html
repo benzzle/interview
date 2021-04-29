@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+function permuteUnique(nums){
+  let result = []
+  nums.sort((a,b) => a-b)
+  let visit = Array(nums.length).fill(false)
+
+  function DFS(arr){
+    console.log('rrrrrrr',arr)
+    if(arr.length === nums.length){
+      console.log(arr)
+      result.push(arr.slice())
+      return
+    }
+    for(let i = 0; i< nums.length; i++){
+      if(visit[i] || (i > 0 && nums[i] === nums[i-1] && !visit[i-1])) continue
+      visit[i] = true
+      console.log(visit)
+      arr.push(nums[i])
+      DFS(arr)
+      visit[i] = false
+      arr.pop()
+    }
+  }
+  DFS([])
+  return result
+}
+
+console.log(permuteUnique([1,2,1,3]))
+  </script>
+</body>
+</html>
