@@ -1,0 +1,1646 @@
+{
+  "id": "d0f143f1b18a4573ba89eff45c1ce0f2",
+  "contentType": 5,
+  "content": "9be446c1ca2844fcb869436a6dbb8c5d",
+  "questionDetails": {
+    "queId": "9be446c1ca2844fcb869436a6dbb8c5d",
+    "parentId": "0",
+    "rootId": "0",
+    "subjectName": "数学",
+    "subjectId": "2",
+    "gradeGroupName": "初中",
+    "gradeGroupId": "2",
+    "logicQuesTypeName": "复合",
+    "logicQuesTypeId": "9",
+    "writtenQuesTypeName": "解答题",
+    "writtenQuesTypeId": "13f97b02f7e4f2c9d35ec1af3c2d1020",
+    "difficulty": 3,
+    "content": "<p>计算：</p>",
+    "answer": [],
+    "analysis": null,
+    "deleted": 0,
+    "organizationList": [
+      {
+        "id": "0",
+        "name": "通用"
+      }
+    ],
+    "svgMark": 1,
+    "keyWord": "",
+    "firstAuditorName": null,
+    "firstAuditorDateTime": null,
+    "secondAuditorName": null,
+    "secondAuditorDateTime": null,
+    "videoUrl": "",
+    "voiceText": "",
+    "translatidText": "",
+    "gifUrl": "",
+    "queDesc": null,
+    "quePreviewUrl": "https://yulan.speiyou.com/preview/preview!previewQuestion.action?queId=9be446c1ca2844fcb869436a6dbb8c5d&subjectId=2&isTemporaryTable=0&appKey=f2fc44ce81c2244c855e733f8897cc97",
+    "orderId": "a073d10a42b74c9486d701c79d8415af",
+    "orderCreator": null,
+    "isAnalysis": 0,
+    "answerType": 0,
+    "isDecidable": 0,
+    "blankAnswer": null,
+    "bxAnswer": [],
+    "degree": 1,
+    "optionAnalysisList": null,
+    "optionDifficultyList": null,
+    "creater": "宋杨",
+    "createrId": "664d4cf2f3aa476ca23de501ccb4da8d",
+    "createDate": "2018-02-06 20:10:35",
+    "modifier": "宋述杰",
+    "modifierId": "8e16f6e17b5a4071b80d7101c8aac8a9",
+    "modifyDate": "2018-11-27 12:08:26",
+    "referenceQueId": null,
+    "answerOptionList": null,
+    "questionSourceList": [],
+    "examOptionList": [
+      {
+        "id": "dc4797b424f04c00a1f148f7149e868e",
+        "name": "知识标签",
+        "parentId": "0",
+        "rootId": "0",
+        "isMain": 0,
+        "gradeGroupId": "2",
+        "subjectId": "2",
+        "mustSelect": 0,
+        "childList": [
+          {
+            "id": "516c6583b86f43b4a88a76f655ebe785",
+            "name": "知识点",
+            "parentId": "dc4797b424f04c00a1f148f7149e868e",
+            "rootId": "dc4797b424f04c00a1f148f7149e868e",
+            "isMain": 1,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 1,
+            "childList": [],
+            "labelKnowList": [
+              {
+                "id": "ef775d3dba4140568a9002d746c51bd0",
+                "name": "式",
+                "parentId": "0",
+                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                "lkcName": null,
+                "isMain": 0,
+                "queNum": 0,
+                "isHide": null,
+                "childList": [
+                  {
+                    "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                    "name": "整式的乘除",
+                    "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                    "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                        "name": "乘法公式",
+                        "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bb",
+                            "name": "完全平方公式",
+                            "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          },
+                          {
+                            "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bd",
+                            "name": "平方差公式",
+                            "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "7f746b81905b4d3881ba3a2de0801255",
+                    "name": "整式的加减",
+                    "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                    "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "654513534194496183579e282480c016",
+                        "name": "整式的定义",
+                        "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isOpen": 0,
+            "isHide": 0
+          },
+          {
+            "id": "29bd13b37367478181e75e337c8dac76",
+            "name": "题型",
+            "parentId": "dc4797b424f04c00a1f148f7149e868e",
+            "rootId": "dc4797b424f04c00a1f148f7149e868e",
+            "isMain": 1,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 1,
+            "childList": [],
+            "labelKnowList": [
+              {
+                "id": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                "name": "式",
+                "parentId": "0",
+                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                "lkcName": null,
+                "isMain": 0,
+                "queNum": 0,
+                "isHide": null,
+                "childList": [
+                  {
+                    "id": "f785307aaf9e43b7bab242dec5eef554",
+                    "name": "整式的乘除",
+                    "parentId": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                    "lkcId": "29bd13b37367478181e75e337c8dac76",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "fa83822d2340449d992cf54ad52dc9a7",
+                        "name": "乘法公式",
+                        "parentId": "f785307aaf9e43b7bab242dec5eef554",
+                        "lkcId": "29bd13b37367478181e75e337c8dac76",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "a5e176d8fb97467c9870358611126606",
+                            "name": "利用平方差公式计算",
+                            "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                            "lkcId": "29bd13b37367478181e75e337c8dac76",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          },
+                          {
+                            "id": "9552b3204db94f6c8580744a263b6e08",
+                            "name": "利用完全平方公式计算",
+                            "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                            "lkcId": "29bd13b37367478181e75e337c8dac76",
+                            "lkcName": null,
+                            "isMain": 1,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isOpen": 0,
+            "isHide": 0
+          },
+          {
+            "id": "bacf67f4a8fc40e28befc3e804b46666",
+            "name": "学习能力",
+            "parentId": "dc4797b424f04c00a1f148f7149e868e",
+            "rootId": "dc4797b424f04c00a1f148f7149e868e",
+            "isMain": 1,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [],
+            "labelKnowList": [
+              {
+                "id": "715a20564888415594de02a2cba3be69",
+                "name": "运算能力",
+                "parentId": "0",
+                "lkcId": "bacf67f4a8fc40e28befc3e804b46666",
+                "lkcName": null,
+                "isMain": 0,
+                "queNum": 0,
+                "isHide": null,
+                "childList": []
+              }
+            ],
+            "isOpen": 0,
+            "isHide": 0
+          }
+        ],
+        "labelKnowList": null,
+        "isOpen": 1,
+        "isHide": 0
+      },
+      {
+        "id": "a069cfe6795845dfaa2b528df28a6724",
+        "name": "课内体系",
+        "parentId": "0",
+        "rootId": "0",
+        "isMain": 0,
+        "gradeGroupId": "2",
+        "subjectId": "2",
+        "mustSelect": 0,
+        "childList": [
+          {
+            "id": "0fa45d6a8a564ec5b14a783236d7f89f",
+            "name": "知识点",
+            "parentId": "a069cfe6795845dfaa2b528df28a6724",
+            "rootId": "a069cfe6795845dfaa2b528df28a6724",
+            "isMain": 1,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 1,
+            "childList": [],
+            "labelKnowList": [
+              {
+                "id": "ef775d3dba4140568a9002d746c51bd0",
+                "name": "式",
+                "parentId": "0",
+                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                "lkcName": null,
+                "isMain": 0,
+                "queNum": 0,
+                "isHide": null,
+                "childList": [
+                  {
+                    "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                    "name": "整式的乘除",
+                    "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                        "name": "乘法公式",
+                        "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "5340f73034f34288b68a77693081333f",
+                            "name": "完全平方公式的计算-不含分式",
+                            "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 1,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          },
+                          {
+                            "id": "ab6504fe8f0e4a869e60410fdd4020fd",
+                            "name": "平方差公式的计算",
+                            "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "7f746b81905b4d3881ba3a2de0801255",
+                    "name": "整式的加减",
+                    "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "47efa69871a5481b97d07aa2bab7490a",
+                        "name": "整式有关的概念",
+                        "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "9331e655a4104349a237bdb3c62dd8d5",
+                            "name": "整式",
+                            "parentId": "47efa69871a5481b97d07aa2bab7490a",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "654513534194496183579e282480c016",
+                                "name": "整式的定义",
+                                "parentId": "9331e655a4104349a237bdb3c62dd8d5",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "isOpen": 0,
+            "isHide": 0
+          },
+          {
+            "id": "aa91ef44a55f4e9aab16ef929635d1bd",
+            "name": "能力",
+            "parentId": "a069cfe6795845dfaa2b528df28a6724",
+            "rootId": "a069cfe6795845dfaa2b528df28a6724",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [],
+            "labelKnowList": [
+              {
+                "id": "715a20564888415594de02a2cba3be69",
+                "name": "运算能力",
+                "parentId": "0",
+                "lkcId": "aa91ef44a55f4e9aab16ef929635d1bd",
+                "lkcName": null,
+                "isMain": 0,
+                "queNum": 0,
+                "isHide": null,
+                "childList": []
+              }
+            ],
+            "isOpen": 0,
+            "isHide": 0
+          }
+        ],
+        "labelKnowList": null,
+        "isOpen": 1,
+        "isHide": 0
+      }
+    ],
+    "optionExamOptionList": [],
+    "queSource": [],
+    "duplicateFlag": false,
+    "deprecated": false,
+    "auditorId": "664d4cf2f3aa476ca23de501ccb4da8d",
+    "auditorName": "宋杨",
+    "isHaveAnalysis": 1,
+    "isTraditional": 0,
+    "traditionalId": null,
+    "disposePersonId": "8e16f6e17b5a4071b80d7101c8aac8a9",
+    "disposePersonName": "宋述杰",
+    "disposeDate": "2018-11-27 12:08:26",
+    "isTemporaryTable": 0,
+    "childList": [
+      {
+        "queId": "c81a1a7497cf4572b6a2af659ff9662b",
+        "parentId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "rootId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "subjectName": "数学",
+        "subjectId": "2",
+        "gradeGroupName": "初中",
+        "gradeGroupId": "2",
+        "logicQuesTypeName": "解答",
+        "logicQuesTypeId": "8",
+        "writtenQuesTypeName": "解答题",
+        "writtenQuesTypeId": "13f97b02f7e4f2c9d35ec1af3c2d1020",
+        "difficulty": 3,
+        "content": "<p>$$\\left( c+d \\right)\\left( c-d \\right)\\left( {{c}^{2}}+{{d}^{2}} \\right)$$．</p>",
+        "answer": [
+          [
+            "<p>$${{c}^{4}}-{{d}^{4}}$$．</p>"
+          ]
+        ],
+        "analysis": [
+          "<p>原式$$=\\left( {{c}^{2}}-{{d}^{2}} \\right)\\left( {{c}^{2}}+{{d}^{2}} \\right)$$，</p>\n<p>$$={{\\left( {{c}^{2}} \\right)}^{2}}-{{\\left( {{d}^{2}} \\right)}^{2}}$$，</p>\n<p>$$={{c}^{4}}-{{d}^{4}}$$．</p>"
+        ],
+        "deleted": 0,
+        "organizationList": [
+          {
+            "id": "0",
+            "name": "通用"
+          }
+        ],
+        "svgMark": 1,
+        "keyWord": "",
+        "firstAuditorName": null,
+        "firstAuditorDateTime": null,
+        "secondAuditorName": null,
+        "secondAuditorDateTime": null,
+        "videoUrl": "",
+        "voiceText": "",
+        "translatidText": "",
+        "gifUrl": "",
+        "queDesc": "",
+        "quePreviewUrl": "https://yulan.speiyou.com/preview/preview!previewQuestion.action?queId=c81a1a7497cf4572b6a2af659ff9662b&subjectId=2&isTemporaryTable=0&appKey=dad0c8bde97ccbe27a16a8654bd53f62",
+        "orderId": "a073d10a42b74c9486d701c79d8415af",
+        "orderCreator": null,
+        "isAnalysis": 0,
+        "answerType": 0,
+        "isDecidable": 0,
+        "blankAnswer": null,
+        "bxAnswer": [],
+        "degree": 2,
+        "optionAnalysisList": null,
+        "optionDifficultyList": null,
+        "creater": "宋杨",
+        "createrId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "createDate": "2018-02-06 20:10:36",
+        "modifier": "宋述杰",
+        "modifierId": "8e16f6e17b5a4071b80d7101c8aac8a9",
+        "modifyDate": "2018-11-27 12:08:26",
+        "referenceQueId": null,
+        "answerOptionList": null,
+        "questionSourceList": [],
+        "examOptionList": [
+          {
+            "id": "dc4797b424f04c00a1f148f7149e868e",
+            "name": "知识标签",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "516c6583b86f43b4a88a76f655ebe785",
+                "name": "知识点",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "654513534194496183579e282480c016",
+                            "name": "整式的定义",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bd",
+                                "name": "平方差公式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              },
+              {
+                "id": "29bd13b37367478181e75e337c8dac76",
+                "name": "题型",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "29bd13b37367478181e75e337c8dac76",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "f785307aaf9e43b7bab242dec5eef554",
+                        "name": "整式的乘除",
+                        "parentId": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                        "lkcId": "29bd13b37367478181e75e337c8dac76",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "fa83822d2340449d992cf54ad52dc9a7",
+                            "name": "乘法公式",
+                            "parentId": "f785307aaf9e43b7bab242dec5eef554",
+                            "lkcId": "29bd13b37367478181e75e337c8dac76",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "a5e176d8fb97467c9870358611126606",
+                                "name": "利用平方差公式计算",
+                                "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          },
+          {
+            "id": "a069cfe6795845dfaa2b528df28a6724",
+            "name": "课内体系",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "0fa45d6a8a564ec5b14a783236d7f89f",
+                "name": "知识点",
+                "parentId": "a069cfe6795845dfaa2b528df28a6724",
+                "rootId": "a069cfe6795845dfaa2b528df28a6724",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "ab6504fe8f0e4a869e60410fdd4020fd",
+                                "name": "平方差公式的计算",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "47efa69871a5481b97d07aa2bab7490a",
+                            "name": "整式有关的概念",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "9331e655a4104349a237bdb3c62dd8d5",
+                                "name": "整式",
+                                "parentId": "47efa69871a5481b97d07aa2bab7490a",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": [
+                                  {
+                                    "id": "654513534194496183579e282480c016",
+                                    "name": "整式的定义",
+                                    "parentId": "9331e655a4104349a237bdb3c62dd8d5",
+                                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                    "lkcName": null,
+                                    "isMain": 0,
+                                    "queNum": 0,
+                                    "isHide": null,
+                                    "childList": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          }
+        ],
+        "optionExamOptionList": [],
+        "queSource": [],
+        "duplicateFlag": false,
+        "deprecated": false,
+        "auditorId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "auditorName": "宋杨",
+        "isHaveAnalysis": 1,
+        "isTraditional": 0,
+        "traditionalId": null,
+        "disposePersonId": null,
+        "disposePersonName": null,
+        "disposeDate": null,
+        "isTemporaryTable": 0,
+        "childList": []
+      },
+      {
+        "queId": "0da5429774b84af8922f1d3fa03ae014",
+        "parentId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "rootId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "subjectName": "数学",
+        "subjectId": "2",
+        "gradeGroupName": "初中",
+        "gradeGroupId": "2",
+        "logicQuesTypeName": "解答",
+        "logicQuesTypeId": "8",
+        "writtenQuesTypeName": "解答题",
+        "writtenQuesTypeId": "13f97b02f7e4f2c9d35ec1af3c2d1020",
+        "difficulty": 3,
+        "content": "<p>$${{\\left( 2x+5y \\right)}^{2}}{{\\left( 2x-5y \\right)}^{2}}$$．</p>",
+        "answer": [
+          [
+            "<p>$$16{{x}^{4}}-200{{x}^{2}}{{y}^{2}}+625{{y}^{4}}$$．</p>"
+          ]
+        ],
+        "analysis": [
+          "<p>原式$$={{\\left( 2x+5y \\right)}^{2}}{{\\left( 2x-5y \\right)}^{2}}$$，</p>\n<p>$$=\\left( 2x+5y \\right)\\left( 2x-5y \\right)\\left( 2x+5y \\right)\\left( 2x-5y \\right)$$，</p>\n<p>$$={{\\left( 4{{x}^{2}}-25{{y}^{2}} \\right)}^{2}}$$，</p>\n<p>$$=16{{x}^{4}}-200{{x}^{2}}{{y}^{2}}+625{{y}^{4}}$$．</p>"
+        ],
+        "deleted": 0,
+        "organizationList": [
+          {
+            "id": "0",
+            "name": "通用"
+          }
+        ],
+        "svgMark": 1,
+        "keyWord": "",
+        "firstAuditorName": null,
+        "firstAuditorDateTime": null,
+        "secondAuditorName": null,
+        "secondAuditorDateTime": null,
+        "videoUrl": "",
+        "voiceText": "",
+        "translatidText": "",
+        "gifUrl": "",
+        "queDesc": "",
+        "quePreviewUrl": "https://yulan.speiyou.com/preview/preview!previewQuestion.action?queId=0da5429774b84af8922f1d3fa03ae014&subjectId=2&isTemporaryTable=0&appKey=6f6b74ae5ec28ebaa25dc9f7adbddec0",
+        "orderId": "a073d10a42b74c9486d701c79d8415af",
+        "orderCreator": null,
+        "isAnalysis": 0,
+        "answerType": 0,
+        "isDecidable": 0,
+        "blankAnswer": null,
+        "bxAnswer": [],
+        "degree": 2,
+        "optionAnalysisList": null,
+        "optionDifficultyList": null,
+        "creater": "宋杨",
+        "createrId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "createDate": "2018-02-06 20:10:37",
+        "modifier": "宋述杰",
+        "modifierId": "8e16f6e17b5a4071b80d7101c8aac8a9",
+        "modifyDate": "2018-11-27 12:08:26",
+        "referenceQueId": null,
+        "answerOptionList": null,
+        "questionSourceList": [],
+        "examOptionList": [
+          {
+            "id": "dc4797b424f04c00a1f148f7149e868e",
+            "name": "知识标签",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "516c6583b86f43b4a88a76f655ebe785",
+                "name": "知识点",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "654513534194496183579e282480c016",
+                            "name": "整式的定义",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bb",
+                                "name": "完全平方公式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bd",
+                                "name": "平方差公式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              },
+              {
+                "id": "29bd13b37367478181e75e337c8dac76",
+                "name": "题型",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "29bd13b37367478181e75e337c8dac76",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "f785307aaf9e43b7bab242dec5eef554",
+                        "name": "整式的乘除",
+                        "parentId": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                        "lkcId": "29bd13b37367478181e75e337c8dac76",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "fa83822d2340449d992cf54ad52dc9a7",
+                            "name": "乘法公式",
+                            "parentId": "f785307aaf9e43b7bab242dec5eef554",
+                            "lkcId": "29bd13b37367478181e75e337c8dac76",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "a5e176d8fb97467c9870358611126606",
+                                "name": "利用平方差公式计算",
+                                "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "9552b3204db94f6c8580744a263b6e08",
+                                "name": "利用完全平方公式计算",
+                                "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          },
+          {
+            "id": "a069cfe6795845dfaa2b528df28a6724",
+            "name": "课内体系",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "0fa45d6a8a564ec5b14a783236d7f89f",
+                "name": "知识点",
+                "parentId": "a069cfe6795845dfaa2b528df28a6724",
+                "rootId": "a069cfe6795845dfaa2b528df28a6724",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "5340f73034f34288b68a77693081333f",
+                                "name": "完全平方公式的计算-不含分式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "ab6504fe8f0e4a869e60410fdd4020fd",
+                                "name": "平方差公式的计算",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "47efa69871a5481b97d07aa2bab7490a",
+                            "name": "整式有关的概念",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "9331e655a4104349a237bdb3c62dd8d5",
+                                "name": "整式",
+                                "parentId": "47efa69871a5481b97d07aa2bab7490a",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": [
+                                  {
+                                    "id": "654513534194496183579e282480c016",
+                                    "name": "整式的定义",
+                                    "parentId": "9331e655a4104349a237bdb3c62dd8d5",
+                                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                    "lkcName": null,
+                                    "isMain": 0,
+                                    "queNum": 0,
+                                    "isHide": null,
+                                    "childList": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          }
+        ],
+        "optionExamOptionList": [],
+        "queSource": [],
+        "duplicateFlag": false,
+        "deprecated": false,
+        "auditorId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "auditorName": "宋杨",
+        "isHaveAnalysis": 1,
+        "isTraditional": 0,
+        "traditionalId": null,
+        "disposePersonId": null,
+        "disposePersonName": null,
+        "disposeDate": null,
+        "isTemporaryTable": 0,
+        "childList": []
+      },
+      {
+        "queId": "62c2141bb8d24ea080d17e86e0c167b0",
+        "parentId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "rootId": "9be446c1ca2844fcb869436a6dbb8c5d",
+        "subjectName": "数学",
+        "subjectId": "2",
+        "gradeGroupName": "初中",
+        "gradeGroupId": "2",
+        "logicQuesTypeName": "解答",
+        "logicQuesTypeId": "8",
+        "writtenQuesTypeName": "解答题",
+        "writtenQuesTypeId": "13f97b02f7e4f2c9d35ec1af3c2d1020",
+        "difficulty": 3,
+        "content": "<p>$$\\left( 2m+n-1 \\right)\\left( 2m-n-1 \\right)$$．</p>",
+        "answer": [
+          [
+            "<p>$$4{{m}^{2}}-4m+1-{{n}^{2}}$$．</p>"
+          ]
+        ],
+        "analysis": [
+          "<p>原式$$=\\left( 2m-1+n \\right)\\left( 2m-1-n \\right)$$，</p>\n<p>$$=\\left[ \\left( 2m-1 \\right)+n \\right]\\left[ \\left( 2m-1 \\right)-n \\right]$$，</p>\n<p>$$={{\\left( 2m-1 \\right)}^{2}}-{{n}^{2}}$$，</p>\n<p>$$=4{{m}^{2}}-4m+1-{{n}^{2}}$$．</p>"
+        ],
+        "deleted": 0,
+        "organizationList": [
+          {
+            "id": "0",
+            "name": "通用"
+          }
+        ],
+        "svgMark": 1,
+        "keyWord": "",
+        "firstAuditorName": null,
+        "firstAuditorDateTime": null,
+        "secondAuditorName": null,
+        "secondAuditorDateTime": null,
+        "videoUrl": "",
+        "voiceText": "",
+        "translatidText": "",
+        "gifUrl": "",
+        "queDesc": "",
+        "quePreviewUrl": "https://yulan.speiyou.com/preview/preview!previewQuestion.action?queId=62c2141bb8d24ea080d17e86e0c167b0&subjectId=2&isTemporaryTable=0&appKey=ade77a586e3e60f21a8f8d87ee1f1a9c",
+        "orderId": "a073d10a42b74c9486d701c79d8415af",
+        "orderCreator": null,
+        "isAnalysis": 0,
+        "answerType": 0,
+        "isDecidable": 0,
+        "blankAnswer": null,
+        "bxAnswer": [],
+        "degree": 2,
+        "optionAnalysisList": null,
+        "optionDifficultyList": null,
+        "creater": "宋杨",
+        "createrId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "createDate": "2018-02-06 20:10:37",
+        "modifier": "宋述杰",
+        "modifierId": "8e16f6e17b5a4071b80d7101c8aac8a9",
+        "modifyDate": "2018-11-27 12:08:26",
+        "referenceQueId": null,
+        "answerOptionList": null,
+        "questionSourceList": [],
+        "examOptionList": [
+          {
+            "id": "dc4797b424f04c00a1f148f7149e868e",
+            "name": "知识标签",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "29bd13b37367478181e75e337c8dac76",
+                "name": "题型",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "29bd13b37367478181e75e337c8dac76",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "f785307aaf9e43b7bab242dec5eef554",
+                        "name": "整式的乘除",
+                        "parentId": "9c23ca6e3ec14a958b6c15a15fc31f72",
+                        "lkcId": "29bd13b37367478181e75e337c8dac76",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "fa83822d2340449d992cf54ad52dc9a7",
+                            "name": "乘法公式",
+                            "parentId": "f785307aaf9e43b7bab242dec5eef554",
+                            "lkcId": "29bd13b37367478181e75e337c8dac76",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "a5e176d8fb97467c9870358611126606",
+                                "name": "利用平方差公式计算",
+                                "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "9552b3204db94f6c8580744a263b6e08",
+                                "name": "利用完全平方公式计算",
+                                "parentId": "fa83822d2340449d992cf54ad52dc9a7",
+                                "lkcId": "29bd13b37367478181e75e337c8dac76",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              },
+              {
+                "id": "516c6583b86f43b4a88a76f655ebe785",
+                "name": "知识点",
+                "parentId": "dc4797b424f04c00a1f148f7149e868e",
+                "rootId": "dc4797b424f04c00a1f148f7149e868e",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "654513534194496183579e282480c016",
+                            "name": "整式的定义",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": []
+                          }
+                        ]
+                      },
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bb",
+                                "name": "完全平方公式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "6oo7ryi0e79zkqai08wbmeohxn6c03bd",
+                                "name": "平方差公式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "516c6583b86f43b4a88a76f655ebe785",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          },
+          {
+            "id": "a069cfe6795845dfaa2b528df28a6724",
+            "name": "课内体系",
+            "parentId": "0",
+            "rootId": "0",
+            "isMain": 0,
+            "gradeGroupId": "2",
+            "subjectId": "2",
+            "mustSelect": 0,
+            "childList": [
+              {
+                "id": "0fa45d6a8a564ec5b14a783236d7f89f",
+                "name": "知识点",
+                "parentId": "a069cfe6795845dfaa2b528df28a6724",
+                "rootId": "a069cfe6795845dfaa2b528df28a6724",
+                "isMain": 1,
+                "gradeGroupId": "2",
+                "subjectId": "2",
+                "mustSelect": 1,
+                "childList": [],
+                "labelKnowList": [
+                  {
+                    "id": "ef775d3dba4140568a9002d746c51bd0",
+                    "name": "式",
+                    "parentId": "0",
+                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                    "lkcName": null,
+                    "isMain": 0,
+                    "queNum": 0,
+                    "isHide": null,
+                    "childList": [
+                      {
+                        "id": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                        "name": "整式的乘除",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "d4388ebf30d44255993de20bd0ebfe4b",
+                            "name": "乘法公式",
+                            "parentId": "4e2ba9fe62f14922aa3cb60f86b8f557",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "ab6504fe8f0e4a869e60410fdd4020fd",
+                                "name": "平方差公式的计算",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              },
+                              {
+                                "id": "5340f73034f34288b68a77693081333f",
+                                "name": "完全平方公式的计算-不含分式",
+                                "parentId": "d4388ebf30d44255993de20bd0ebfe4b",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "id": "7f746b81905b4d3881ba3a2de0801255",
+                        "name": "整式的加减",
+                        "parentId": "ef775d3dba4140568a9002d746c51bd0",
+                        "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                        "lkcName": null,
+                        "isMain": 0,
+                        "queNum": 0,
+                        "isHide": null,
+                        "childList": [
+                          {
+                            "id": "47efa69871a5481b97d07aa2bab7490a",
+                            "name": "整式有关的概念",
+                            "parentId": "7f746b81905b4d3881ba3a2de0801255",
+                            "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                            "lkcName": null,
+                            "isMain": 0,
+                            "queNum": 0,
+                            "isHide": null,
+                            "childList": [
+                              {
+                                "id": "9331e655a4104349a237bdb3c62dd8d5",
+                                "name": "整式",
+                                "parentId": "47efa69871a5481b97d07aa2bab7490a",
+                                "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                "lkcName": null,
+                                "isMain": 0,
+                                "queNum": 0,
+                                "isHide": null,
+                                "childList": [
+                                  {
+                                    "id": "654513534194496183579e282480c016",
+                                    "name": "整式的定义",
+                                    "parentId": "9331e655a4104349a237bdb3c62dd8d5",
+                                    "lkcId": "0fa45d6a8a564ec5b14a783236d7f89f",
+                                    "lkcName": null,
+                                    "isMain": 0,
+                                    "queNum": 0,
+                                    "isHide": null,
+                                    "childList": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "isOpen": 0,
+                "isHide": 0
+              }
+            ],
+            "labelKnowList": null,
+            "isOpen": 1,
+            "isHide": 0
+          }
+        ],
+        "optionExamOptionList": [],
+        "queSource": [],
+        "duplicateFlag": false,
+        "deprecated": false,
+        "auditorId": "664d4cf2f3aa476ca23de501ccb4da8d",
+        "auditorName": "宋杨",
+        "isHaveAnalysis": 1,
+        "isTraditional": 0,
+        "traditionalId": null,
+        "disposePersonId": null,
+        "disposePersonName": null,
+        "disposeDate": null,
+        "isTemporaryTable": 0,
+        "childList": []
+      }
+    ]
+  },
+  "orderDetail": null,
+  "score": 0,
+  "childScore": [],
+  "blank": 0,
+  "childBlank": [],
+  "createrId": "130310",
+  "createrName": "周明慧",
+  "modifierId": "232787",
+  "modifierName": "王哲",
+  "createTime": "2021-05-25 18:19:20",
+  "modifyTime": "2021-05-25 19:12:04",
+  "corrected": false,
+  "recommended": false,
+  "referenceUpdateTime": "2018-11-27 12:08:26",
+  "openSecretLine": 0,
+  "thumbnailUrl": "http://renderimage-cdn.speiyou.com/image/question/9be446c1ca2844fcb869436a6dbb8c5d.png",
+  "axis": [],
+  "teacherRemark": null,
+  "hideMainId": [],
+  "hideQueId": [],
+  "isShowDifficulty": 0,
+  "isShowSource": 0,
+  "isStuShow": 1,
+  "videoId": null,
+  "videoType": null,
+  "videoUrl": null,
+  "haveAnalysisVideo": false,
+  "sourceIndex": 0,
+  "customDifficulty": null,
+  "initialQueId": "9be446c1ca2844fcb869436a6dbb8c5d",
+  "videoList": null,
+  "originalEleId": "4f18ffd5fa144029a43471756c0cc1c8",
+  "originalPaperId": "1ea0c3ce41144247a4020fe6b72aed07",
+  "isVideoQuestion": null,
+  "videoQuestionReject": null,
+  "respondDuration": 0,
+  "voiceRespond": 0,
+  "isPhotoQue": 1,
+  "isPictureRecording": 0,
+  "isRejected": 0,
+  "respondRejected": 0,
+  "isDecidable": null,
+  "isCorrected": 0
+}
