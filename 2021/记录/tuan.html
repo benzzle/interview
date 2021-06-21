@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+//   1、实现一个精确加法
+// 2、实现一个大数加法 -> 实现 bigAdd(num1,num2)
+function bigAdd(num1,num2){
+    let num1Str = num1 + ''
+    let num2Str = num2 + ''
+    let maxLength = Math.max(num1Str.length,num2Str.length)
+    let addOne = 0
+    let result = ''
+    for(let i = 0; i < maxLength; i++){
+        result = (parseInt(num1Str[i])+ parseInt(num2Str[i]) + addOne)%10 + result
+        addOne = Math.floor((parseInt(num1Str[i])+ parseInt(num2Str[i]))/10)
+    }
+    if(addOne) result = addOne + result
+
+    return result //
+}
+
+// 100个台阶，然后每次可以走1步或者2步，问走完这100个台阶有多少种走法
+// 爆栈
+function step(num){
+  let result = 0
+  const fn = function(len){
+    if(len === num){
+      result++
+      return
+    }else if(len > num){
+      return
+    }else{
+      fn(len+1)
+      fn(len+2)
+    }
+  }
+  fn(1)
+  fn(2)
+  return result
+}
+
+var numWays = function (n) {
+    // 尾调用
+    // i 初始值为0级台阶跳法
+    // j 初始值为1级台阶跳法
+    const helper = (x, i = 1, j = 1) => {
+        if (x <= 1) {
+            return j;
+        }
+        return helper(x-1,j,i+j);
+    }
+    return helper(n);
+};
+
+var numWays1 = function(n) {
+    const arr = new Array(n+1).fill(0);
+    arr[0] = 1;
+    arr[1] = 1;
+    arr[2] = 2;
+    for(let i = 3; i<=n;i++){
+        arr[i] = arr[i-1] + arr[i-2]
+    }
+    return arr[n]
+};
+console.log('step', numWays1(10))
+
+// 输入:
+// 'https://interview.nowcoder.com/interview/22555192/interviewer?code=X3HPVXeL&confirm=true#hahah'
+// 输出：
+// {
+// code:'X3HPVXeL',
+// confirm:'true'
+// }
+
+function getQuery() {
+    const url = decodeURI(location.search); // 获取url中"?"符后的字串(包括问号)
+    let query = {};
+    if (url.indexOf("?") != -1) {
+        const str = url.substr(1);
+        const pairs = str.split("&");
+        for(let i = 0; i < pairs.length; i ++) {
+            const pair = pairs[i].split("=");
+            query[pair[0]] = pair[1];
+        }
+    }
+    return query ;  // 返回对象
+}
+
+</script>
+</html>

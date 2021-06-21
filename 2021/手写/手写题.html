@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function unique(arr) {
+        var res = arr.filter(function(item, index, array) {
+            return array.indexOf(item) === index
+        })
+        return res
+      }
+      // console.log([...new Set([1,2,3,1])])
+      // console.log(unique([1,1,2,3,4,2,3,2,4,7]))
+
+      function flatten(arr){
+        let result = []
+        for(let i = 0; i < arr.length; i++){
+          if(Array.isArray(arr[i])){
+            result = result.concat(flatten(arr[i]))
+          }else{
+            result.push(arr[i])
+          }
+        }
+        return result
+      }
+
+      function flatten1(arr){
+        while(arr.some(item => Array.isArray(item))){
+          arr = [].concat(...arr)
+        }
+        return arr
+      }
+
+      // console.log(flatten([1,2,[3,4,[5,6,[7,8]]]]))
+      // console.log(flatten1([1,2,[3,4,[5,6,[7,8]]]]))
+
+      // 简单版本
+
+      function deepClone1(obj){
+        if(typeof obj !== 'object') return
+        let result = Array.isArray(obj)?[]:{}
+        for(let key in obj){
+          if(obj.hasOwnProperty(key)){
+            result[key] = typeof obj[key] === 'object'?deepClone1(obj[key]):obj[key]
+          }
+        }
+        return result
+      }
+      // 复杂版本
+      function deepClone(target, map = new WeakMap()){
+        if(map.has(target)){
+          return target
+        }
+        if(target instanceof RegExp ){
+          return new RegExp(target)
+        }
+        if(target instanceof Date ){
+          return new Date(target)
+        }
+        if(target instanceof Function ){
+          return function(){
+            target.apply(this,arguments)
+          }
+        }
+        if(target instanceof Object){
+          map.set(target,true)
+          let result = Array.isArray(target)?[]:{}
+          for(let key in target) {
+            console.log('key',target.hasOwnProperty(key), key)
+            if(target.hasOwnProperty(key)) {
+              if(typeof target[key] === 'object'){
+                result[key] = deepClone(target[key],map)
+              }else{
+                result[key] = target[key]
+              }
+            }
+          }
+          return result
+        }
+        return target
+      }
+      // let obj = {
+      //   fn: function(){},
+      //   str: 'string',
+      //   reg: /[a-z]/g,
+      //   arr: [1,2,4],
+      //   obj: {a:1,b:2},
+      //   date: new Date(2020/09/12)
+      // }
+      // let obj1 = deepClone(obj)
+      // obj1.obj.a = 12
+      // obj1.arr.push(3433)
+      // console.log('------',obj,obj1)
+      class EventBus {
+        constructor(){
+          this._events = {}
+        }
+        on(name, cb){
+          if(!this._events[name]) this._events[name] = []
+          cb && this._events[name].push(cb)
+        }
+        emit(name, ...args){
+          const events = this._events[name]
+          if(events && events.length > 0){
+            events.forEach( cb => {
+              cb(...args)
+            })
+          }
+        }
+        off(name, cb){
+          const events = this._events[name]
+          if(events && events.length > 0){
+            if(typeof cb === 'function'){
+              const index = events.indexOf(cb)
+              events.splice(index,1)
+            }
+            if(typeof cb === 'undefined'){
+              events.length = 0
+            }
+          }
+        }
+        once(name, cb){
+          const callBack = function(){
+            this.off(name,callBack) // 这个this有问题吗？
+            cb.apply(null, arguments)
+          }
+          this.on(name, callBack)
+        }
+      }
+
+      // class实现私有属性和方法
+      class privateProp {
+        constructor(name){
+          this.name = name
+        }
+        #name = '张三'
+
+        get getName(){
+          return this.#name
+        }
+        getPerName(){
+          return this.#name
+        }
+      }
+
+      const newProp = new privateProp('Lisi')
+      console.log(newProp.getName, newProp.getPerName())
+
+
+
+
+
+
+
+      ​​​​function f() {return '111'}
+      function test(x) {
+        var result = []
+        console.log(f)
+        if (x) {
+          function f() {return '222'}
+          result.push(f())
+        }
+        result.push(f())
+        return result
+      }
+      console.log(test(1))
+      // console.log(test(0))
+    </script>
+  </body>
+</html>

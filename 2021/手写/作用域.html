@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  if(true){
+    var a = 1
+    b = 2
+  }
+  function ccc(){
+    c = 3
+  }
+  console.log(a)  // 全局存在a
+  console.log(b)  // 全局存在b\
+  ccc() // 如果c
+  console.log(c)  // 全局
+
+
+  var d = 4
+  if(true){
+    let d = 44
+  }
+  console.log(d)  // 4因为let声明了会计作用域
+  for(var i = 0; i < 4; i++){
+    (function(n){
+      setTimeout(() =>{
+      console.log(n)
+    },100)})(i)
+  }
+  // console.log(i)
+
+  function fff(){
+    let f = 5
+    return function(){
+      return f
+    }
+  }
+  console.log(fff())
+  console.log(fff)
+
+
+
+  var a = 10
+function fn() {
+  var b = 20
+  function bar() {
+    console.log(a + b) //30
+  }
+  return bar
+}
+var x = fn(),
+  b = 200,
+  a = 1
+x() //bar()
+
+
+function Person(name,desc){
+    this.name = name;
+    this.desc = desc;
+} //***1****//
+Person.prototype.getName = function(){
+    return this.name;
+}//***2****//
+Person.prototype.getDesc = function(){
+    return this.desc;
+}//***3****//
+
+const obj = new Person('juefei','cool');//***4****//
+console.log(obj);//***5****//
+console.log(obj.getName);//***6****//
+
+</script>
+
+</body>
+</html>

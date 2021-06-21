@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 大驼峰转换
+  function transLineBig(str) {
+    const arr = str.split('-')
+    let result = ''
+    arr.forEach(element => {
+      result += element.slice(0,1).toUpperCase() + element.slice(1)
+    });
+    return result
+  }
+
+  function transLineBigReg(str){
+    return str.replace(/-(\w)/g, function($0,$1){
+      console.log('999',$0,$1)
+      return $1.toUpperCase()
+    })
+  }
+  console.log(transLineBigReg('small-nib-big'))
+  // 小驼峰转换
+  function transLineSmall(str) {
+    const arr = str.split('-')
+    let result = ''
+    arr.forEach((element, index) => {
+      if(index){
+        result += element.slice(0,1).toUpperCase() + element.slice(1)
+      }else{
+        result = element
+      }
+    });
+    return result
+  }
+  console.log(transLineBig('a-case-ccc-ddd'))
+  console.log(transLineSmall('a-case-ccc-ddd'))
+
+  function transSmallLine(str){
+    return str.replace(/([A-Z])/g, '-$1').toLowerCase().slice(1)
+  }
+  console.log(transSmallLine('BigSmallACdd'))
+</script>
+</body>
+</html>

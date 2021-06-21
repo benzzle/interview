@@ -6,47 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
     <script>
-      var longestValidParentheses = function (s) {
-        let max = 0;
-        let stack = [];
-        stack.push(-1); // 初始化一个参照物
-        console.log(stack, stack.length)
-        // 通过参照物解决有效问题 存入数组下标 计算连续问题
-        for (let i = 0; i < s.length; i++) {
-          if (s[i] === "(") {
-            stack.push(i);
-            console.log('当前的stack==push之后', stack)
-          } else {
-            stack.pop();
-            console.log('当前的stack===pop之后', stack)
-            if (stack.length) {
-              console.log('这里有参照物==stack', stack[stack.length - 1])
-              max = Math.max(max, i - stack[stack.length - 1]);
-            } else {
-              stack.push(i); // 放入右括号参照物
+      function longestValidParentheses(s) {
+        const arr = s.split('')
+        const result = []
+        result.push(-1)
+
+        let max = 0
+        for( let i = 0; i < arr.length; i++){
+          if(arr[i] === '('){
+            result.push(i)
+          }else{
+            result.pop()
+            if(result.length){
+              max = Math.max(max, i - result[result.length - 1])
+            }else{
+              result.push(i)
             }
           }
         }
-        return max;
-      };
-      console.log(longestValidParentheses('(())'))
-      // 滑动窗口
-      var longestValidParentheses1 = function (s) {
-        let max = 0;
-        let slow = 0
-        let fast = 0
-        for (let i = 0; i < s.length; i++) {
-          if (s[i] === "(") {
-            stack.push(i);
-          } else {
+        return max
+      }
 
-          }
-        }
-        return max;
-      };
-
+      console.log(longestValidParentheses("))((()))"));
     </script>
   </body>
 </html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent{
+      width: 500px;
+      height: 500px;
+      background-color: olive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #child{
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+    .testa{
+      background-color: pink;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    .testb{
+      background-color: yellowgreen;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+    }
+    /* 这种实现高度等于宽度依赖于父元素 */
+    .testc{
+      background-color: olive;
+      width: 50%;
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      padding-bottom: 50%;
+    }
+    .test-width{
+      background: green;
+      width: 100px;
+      height: calc(width);
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+  <div class="testa">
+    <div class="testb">
+      <div class="testc"></div>
+    </div>
+  </div>
+  <div class="test-width"></div>
+  <script>
+    // mouseenter和mouseleave只会触发一次
+    // mouseover和mouseout会在你进入到内部元素的时候触发out再触发over,
+    const parent = document.getElementById("parent")
+    const child = document.getElementById("child")
+    parent.addEventListener('mouseover', function(){
+      console.log(1)
+      child.style.backgroundColor = 'red'
+
+    }, false)
+    parent.addEventListener('mouseout', function(){
+      console.log(2)
+      child.style.backgroundColor = 'pink'
+
+    }, false)
+  </script>
+</body>
+</html>

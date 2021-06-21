@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 括号。设计一种算法，打印n对括号的所有合法的（例如，开闭一一对应）组合。
+      // 说明：解集不能包含重复的子集。
+      // 例如，给出 n = 3，生成结果为：
+      // [
+      //   "((()))",
+      //   "(()())",
+      //   "(())()",
+      //   "()(())",
+      //   "()()()"
+      // ]
+
+      var generateParenthesis = function (n) {
+        const result = [];
+        function getAll(str, leftLen, rightLen) {
+          if (leftLen === 0 && rightLen === 0) {
+            result.push(str);
+            return;
+          }
+          if (leftLen > 0) getAll(str + "(", leftLen - 1, rightLen);
+          if (leftLen < rightLen) getAll(str + ")", leftLen, rightLen - 1);
+        }
+        getAll("", n, n); //
+        return result;
+      };
+      console.log(generateParenthesis(3));
+
+      // 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+
+      // 有效字符串需满足：
+
+      // 左括号必须用相同类型的右括号闭合。
+      // 左括号必须以正确的顺序闭合。
+      var isValid = function (s) {
+        let len = s.length;
+        if (len % 2 === 1) return false;
+        let result = [];
+        for (let item of s) {
+          switch (item) {
+            case "{":
+            case "[":
+            case "(":
+              result.push(item);
+              break;
+            case "}":
+              if (result.pop() !== "{") return false;
+              break;
+            case "]":
+              if (result.pop() !== "[") return false;
+              break;
+            case ")":
+              if (result.pop() !== "(") return false;
+              break;
+            default:
+              break;
+          }
+        }
+        return result.length === 0;
+      };
+      // 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
+      // 任何左括号 ( 必须有相应的右括号 )。
+      // 任何右括号 ) 必须有相应的左括号 ( 。
+      // 左括号 ( 必须在对应的右括号之前 )。
+      // * 可以被视为单个右括号 ) ，或单个左括号 ( ，或一个空字符串。
+      // 一个空字符串也被视为有效字符串。
+      var checkValidString = function (s) {
+        const l = "(";
+        const r = ")";
+        const star = "*";
+        let stack = [];
+        let stars = [];
+        for (let i = 0; i < s.length; i++) {
+          switch (s[i]) {
+            case l:
+              stack.push(i);
+              break;
+            case r:
+              if (stack.length) {
+                stack.pop();
+              } else if (stars.length) {
+                stars.pop();
+              } else {
+                return false;
+              }
+              break;
+            case star:
+              stars.push(i);
+              break;
+            default:
+              break;
+          }
+        }
+        if (stars.length < stack.length) {
+          return false;
+        } else {
+          while (stars.length || stack.length) {
+            if (stars.pop() < stack.pop()) return false;
+          }
+        }
+        return true;
+      };
+      // 给你一个只包含 '(' 和 ')' 的字符串，找出最长有效（格式正确且连续）括号子串的长度。
+      var longestValidParentheses = function (s) {
+        let max = 0;
+        let result = [-1];
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "(") {
+            result.push(i);
+          } else {
+            result.pop();
+            if (result.length) {
+              max = Math.max(max, i - result[result.length - 1]);
+            } else {
+              result.push(i);
+            }
+          }
+        }
+        return max;
+      };
+    </script>
+  </body>
+</html>

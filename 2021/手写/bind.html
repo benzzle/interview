@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  Function.prototype.bind = function(thisArg, ...args){
+    const _self = this
+    if(typeof _self !== 'function') return
+    const fn = function(...args2){
+      const _this = this instanceof _self? this: thisArg
+      _self.apply(_this, [...args1,...args2])
+    }
+    fn.prototype = this.prototype
+    return fn
+  }
+</script>
+</body>
+</html>

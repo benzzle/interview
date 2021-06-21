@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+* 把任意一个函数，修饰生成一个带重试功能的新函数。
+*
+* @param {Function} fn 原函数
+* @param {number} n 最大重试次数
+* @return {Function} 带有重试功能的新函数
+*/
+function retryDecorator(fn, n) {
+
+}
+
+
+// 示例
+const newFn = retryDecorator(fn, 3)
+
+/**
+* 当调用带重试功能的新函数时。
+* 1、如果执行失败，内部自动进行重试；
+* 2、如果重试了 n 次依然失败，抛出最后一次的异常；
+* 3、新函数的调用方式与原函数保持一致。
+*/
+newFn(1, 2)
+
+
+function async retryDecorator(fn, n){
+  return new Promise((resolve, reject)=> {
+    return function(){
+      try{
+        fn.apply(this,arguments)
+        resolve()
+      }catch(err){
+        n--
+        if(n === 0){
+        	throw Error(err)
+          reject(err)
+        }
+        await retryDecorator(fn, n)(arguments)
+        resolve()
+      }
+    }
+
+  })
+
+}
+
+
+let newF = retryDecorator(fn, 6)
+newf(1,2)
+  </script>
+</body>
+</html>

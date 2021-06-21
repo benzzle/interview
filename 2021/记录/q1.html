@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+inner = 'window';
+function say() {
+    console.log(inner);
+    console.log(this.inner);
+}
+
+var obj1 = (function() {
+    var inner = '1-1';
+    return {
+        inner: '1-2',
+        say: function() {
+            console.log(inner);
+            console.log(this.inner);
+        }
+    }
+})();
+
+say();  // window window
+
+obj1.say(); // 1-1,1-2
+
+obj1.say = say;
+
+obj1.say(); // window 1-2
+
+
+
+
+setTimeout(function() {
+  console.log(1)
+}, 0);
+
+new Promise(function(resolve, reject) {
+  console.log(2)
+  for (var i = 0; i < 10000; i++) {
+      if(i === 10) {console.log(10)}
+      i == 9999 && resolve();
+  }
+  console.log(3)
+}).then(function() {
+  console.log(4)
+})
+console.log(5)
+
+
+
+function difineProperty(obj){
+    let keys = Object.keys(obj)
+    keys.forEach(key => {
+        Object.defineProperty(obj,key,{
+            set(val){
+                obj[key] = val
+            },
+            get(val){
+                return obj[val]
+            }
+        })
+    })
+}
+
+let timer = null
+function debounce(fn,delay){
+  clearTimeout(timer)
+  setTimeout(() => {
+    fn()
+  },delay)
+}
+
+
+// indexof有两个参数
+let arr = [1,2,3,1,4,5]
+console.log('indexOf',arr.indexOf(1,1))
+  </script>
+</body>
+</html>

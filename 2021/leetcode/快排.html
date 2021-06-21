@@ -55,36 +55,26 @@ function quickSort(arr,left=0,right=arr.length-1){
 console.log(quickSort([1,2,3,4,5,9,6,8,7,1,300,23,56,78,45]))
 
 function quickSort1(arr, left=0, right=arr.length-1) {
-    var len = arr.length,
-        partitionIndex;
     if (left < right) {
-        partitionIndex = partition1(arr, left, right);
-        quickSort(arr, left, partitionIndex - 1);
-        quickSort(arr, partitionIndex + 1, right);
+        const index = findIndex(arr, left, right);
+        quickSort1(arr, left, index - 1);
+        quickSort1(arr, index + 1, right);
     }
     return arr;
 }
-function partition1(arr, left, right) {
-    var pivot = left,
-        index = pivot + 1;
-    for (var i = index; i <= right; i++) {
-        if (arr[i] < arr[pivot]) {
-            swap1(arr, i, index);
-            index++;
+function findIndex(arr, left, right) {
+    let curIndex = left + 1;
+    for (var i = curIndex; i <= right; i++) {
+        if (arr[i] < arr[left]) {
+            [arr[i], arr[curIndex]] = [arr[curIndex], arr[i]]
+            curIndex++;
         }
     }
-    swap1(arr, pivot, index - 1);
-    return index - 1;
+    [arr[left], arr[curIndex - 1]] = [arr[curIndex - 1], arr[left]]
+    console.log('aaaa=====',arr, curIndex - 1)
+    return curIndex - 1;
 }
-/*
- * 普通的交换，将a[i]和a[j]的数值交换；
- */
-function swap1(arr, i, j) {
-    var temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-}
-console.log('2222', quickSort1([1,2,3,4,5,9,6,8,7,1,300,23,56,78,45]))
+console.log('2222', quickSort1([1,89,3,755,5,9,6,8,7,1,300,23,56,78,45]))
 </script>
 </body>
 </html>

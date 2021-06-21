@@ -12,11 +12,8 @@ function permuteUnique(nums){
   let result = []
   nums.sort((a,b) => a-b)
   let visit = Array(nums.length).fill(false)
-
   function DFS(arr){
-    console.log('rrrrrrr',arr)
     if(arr.length === nums.length){
-      console.log(arr)
       result.push(arr.slice())
       return
     }

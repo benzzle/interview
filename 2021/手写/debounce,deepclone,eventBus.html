@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <script>
+// 防抖
+function debounce(fn, delay=300){
+  let timer = null
+  return function(...args){
+    timer && clearTimeout(timer)
+    timer = setTimeout(() => {
+      timer = null
+      fn.call(this,...args)
+    },delay)
+  }
+}
+document.getElementById('btn').addEventListener('click', debounce(() => {
+  console.log(1)
+},2000))
+
+// 节流
+function throttle(fn, delay=300){
+  let timer = null
+  return function(...args){
+    if(!timer){
+      timer = setTimeout(() => {
+        fn.call(this, ...args)
+        clearTimeout(timer)
+        timer = null
+      },delay)
+    }
+  }
+}
+// 深克隆
+function deepClone(target){
+  if(typeof target === 'object'){
+    if(target instanceof Date){
+      return new Date(target)
+    }
+    if(target instanceof RegExp){
+      return new RegExp(target)
+    }
+    if(target instanceof Function){
+      return function(){
+        return target.apply(this,arguments)
+      }
+    }
+    if(target instanceof Array || target instanceof Object){
+      let result = target instanceof Array?[]:{}
+      for(let key in target){
+        result[key] = deepClone(target[key])
+      }
+      return result
+    }
+  }
+  return target
+}
+// 订阅发布
+
+class EventBus {
+  constructor(){
+    this.events = {}
+  }
+  on(name, fn){
+    if(!this.events[name]) this.events[name] = []
+    if( fn && fn instanceof Function){
+      this.events[name].push(fn)
+    }
+  }
+  emit(name, ...args){
+    const cbs = this.events[name]
+    if(Array.isArray(cbs)){
+      cbs.forEach(cb => {
+        cb(...args)
+      })
+    }
+  }
+  off(name, cb){
+    let cbs = this.events[name]
+    if(cbs && cbs.length > 0){
+      if(cb && cb instanceof Function){
+        const index = cbs.indexOf(cb)
+        cbs.splice(index,1)
+      }
+      if(typeof cb === 'undefined'){
+        cbs.length = 0
+      }
+    }
+  }
+  once(name, cb){
+    const _this = this
+    const callBack = function() {
+      _this.off(name, callBack)
+      cb.apply(this, arguments)
+    }
+    _this.on(name, callBack)
+  }
+}
+
+// 快排
+function quickSort(arr){
+  if(arr.length < 2) return arr
+  let left = []
+  let right = []
+  let midIndex = Math.floor(arr.length/2)
+  const mid = arr.splice(midIndex, 1)
+  console.log(mid)
+  for( let i = 0; i < arr.length; i++){
+    if(arr[i] > mid){
+      right.push(arr[i])
+    }else{
+      left.push(arr[i])
+    }
+  }
+  return quickSort(left).concat(mid, ...quickSort(right)) // 快排注意这里的合并是concat
+}
+console.log(quickSort([7,4,5,9,2,3,7,6,1,0,8,3]))
+
+// new
+function _new(fn, ...args){
+  const obj = Object.create(fn.prototype)
+  const rel = fn.call(obj, ...args)
+  return rel instanceof Object ? rel : obj
+}
+//
+
+
+function deepClone(obj){
+  let result
+  if(obj instanceof Object){
+    const constructor = obj.constructor
+    switch (constructor) {
+      case Object:
+        result = {}
+        for(let key in obj){
+          result[key] = deepClone(obj[key])
+        }
+        break;
+      case Date:
+        result = new Date(obj)
+        break;
+      case Array:
+        result = []
+        for(let item of obj){
+          result.push(deepClone(item))
+        }
+        break;
+      case RegExp:
+        result = new RegExp(obj)
+        break;
+      case Function:
+        result = function(){
+          return obj.apply(this, arguments)
+        }
+        break
+      default:
+        break;
+    }
+  }else{
+    result = obj
+  }
+  return result
+}
+  </script>
+</body>
+</html>

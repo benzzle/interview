@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function pro1(){
+      return new Promise((resolve)=>{
+        setTimeout(() => {
+          resolve(1)
+        }, 2000)
+      })
+    }
+    function pro2(){
+      return new Promise((resolve)=>{
+        setTimeout(() => {
+          resolve(2)
+        }, 1000)
+      })
+    }
+    const arr = [pro1, pro2]
+    function run(){
+      // for(let i = 0; i < arr.length; i++){
+      //   let a = await arr[i]()
+      //   console.log(a)
+      // }
+      // 下面这种方式是不行的
+      arr.forEach( async (item) => {
+        let a = await item()
+        console.log(a)
+      })
+    }
+
+    run()
+
+  </script>
+</body>
+</html>

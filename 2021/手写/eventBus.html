@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        class EventBus1 {
+          constructor(){
+            this._events = {}
+          }
+          emit(event, ...args){
+            const events = this._events[event]
+            if(events && events.length > 0){
+              events.forEach(cb => {
+                cb(...args)
+              })
+            }
+          }
+          on(event, fn){
+            if(!this._events[event]){
+              this._events[event] = []
+            }
+            fn && this._events[event].push(fn)
+          }
+          off(event, fn){
+            const events = this._events[event]
+            if(events && events.length > 0){
+              if(typeof fn === 'function'){
+                const index = fn.indexOf(events)
+                index !== -1 && events.splice(index,1)
+              }
+              if(typeof fn === 'undefined'){
+                events.length = 0
+              }
+            }
+          }
+          once(event, fn){
+            const callBackFn = (...args) => {
+              this.off(event, callBackFn)
+              fn(...args)
+            }
+            if(fn && typeof fn === 'function')
+            this.on(event, callBackFn)
+          }
+        }
+
+
+
+
+        class EventBus {
+          constructor() {
+              // 全局定义一个_events属性，存储事件
+              this._events = new Map()
+          }
+          once(event, fn) { // 消息队列中仅保存一个消息
+              // 无需检查msgName是否存在
+              this._events.set(event, fn)
+          }
+          on(event, fn) { // 将消息保存到当前的消息队列中
+              const events = this._events.get(event) || []
+              this._events.set(event,[...events,fn])
+              // this._events.set(event, [...this._events.get(event) || [], fn])
+          }
+          emit(event, msg) { // 发送消息
+              if (!this._events.has(event)) {
+                  return false
+              }
+              let arr = this._events.get(event)
+              arr.map((fn) => {
+                  fn(msg)
+              })
+          }
+          off(event, fn) {
+              this._events.delete(event)
+          }
+      }
+      const bus = new EventBus()
+      bus.on('hi', function (msg) {
+          console.log(`订阅的消息是：${msg}`);
+      });
+      bus.emit('hi', 123213)
+      bus.once('hi', function(){
+        console.log(1111)
+      })
+      // bus.off('hi')
+      bus.emit('hi', 111)
+      setTimeout(() => {
+        bus.emit('hi', 111111)
+      }, 3000)
+
+
+
+
+
+
+
+
+
+      // 面试写的
+      class EventEmitter {
+          constructor(){
+          	this.events = {}
+          }
+      	on(name, fn){
+              if(!this.events[name])this.events[name]=[]
+              if(typeof fn === 'function'){
+              	this.events[name].push(fn)
+              }
+          }
+          emit(name,...args){
+          	let events = this.events[name]
+              if(events && events.length){
+              	events.forEach(cb => {
+                      cb(...args)
+                  })
+              }
+          }
+          off(name, fn){
+              let events = this.events[name]
+              if(events && events.length>0){
+              	if(typeof fn === 'function'){
+      				const index = events.indexOf(fn)
+                      index !== -1 ? events.splice(index,1)
+                  }
+                   if(typeof fn === 'undefined'){
+      				events.length = 0
+                  }
+              }
+          }
+          once(name, fn){
+              const callBack = () => {
+                  this.off(name,callBack)
+                  fn.apply(null, arguments)
+              }
+              this.on(name,callBack)
+          }
+      }
+    </script>
+  </body>
+</html>

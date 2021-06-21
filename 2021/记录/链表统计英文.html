@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <title>Linked List</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script type="text/javascript">
+      function Node(data) {
+        this.data = data;
+        this.frequency = 1;
+        this.next = null;
+      }
+      var SList = function SList() {
+        this.head = new Node("Dummy");
+      };
+      // SList.prototype.insertLast = function (data) {
+      //   var p = this.head;
+      //   while (p.next != null) p = p.next;
+      //   p.next = new Node(data);
+      // };
+      // SList.prototype.insertFirst = function (data) {
+      //   var p = new Node(data);
+      //   p.next = this.head.next;
+      //   this.head.next = p;
+      // };
+      SList.prototype.traversal = function () {
+        var p = this.head;
+        while (p.next != null) {
+          document.write(p.next.data + "(" + p.next.frequency + "), ");
+          p = p.next;
+        }
+      };
+
+      SList.prototype.orderInsert = function (data) {
+        var k = this.search(data);
+        if (k) k.frequency++;
+        else {
+          var p = new Node(data);
+          var q = this.head;
+          while (q.next != null && q.next.data < data) q = q.next;
+          p.next = q.next;
+          q.next = p;
+        }
+      };
+      SList.prototype.search = function (data) {
+        var p = this.head;
+        while (p.data != data && p.next != null) p = p.next;
+        if (p.data != data) return null;
+        else return p;
+      };
+
+      var Slist = new SList();
+      var s = new Array(
+        "earthquake",
+        // "prediction",
+        // "geology",
+        // "physics",
+        // "chemistry",
+        // "biology",
+        // "mathematics",
+        // "computer",
+        // "earth_science",
+        // "chemistry",
+        // "biology",
+        // "mathematics",
+        // "computer",
+        // "paleomagnetism",
+        // "topology",
+        // "biology",
+        // "mathematics",
+        // "computer",
+        // "earthquake",
+        "Dummy"
+      );
+      for (var i = 0; i < s.length; i++) Slist.orderInsert(s[i]);
+      // Slist.traversal();
+
+
+
+
+
+      function NodeList(word){
+        this.word = word
+        this.count = 1
+        this.next = null
+      }
+      function List(){
+        this.head = new NodeList()
+      }
+      List.prototype.search = function(word){
+        let head = this.head
+        while(head.next !== null && head.word !== word){
+          head = head.next
+        }
+        if(head.word !== word){ // 这一步的判断很重要
+          return null
+        }
+        return head
+      }
+      List.prototype.insert = function(word){
+        let node = this.search(word)
+        if(node){
+          node.count++
+        }else{
+          let newNode = new NodeList(word)
+          let head = this.head
+          while(head.next !== null && head.next.word < word){
+            head = head.next
+          }
+          newNode.next = head.next
+          head.next = newNode
+        }
+      }
+      List.prototype.traversal = function(){
+        let head = this.head
+        let str = ''
+        while(head.next){
+          head = head.next
+          str += `${head.word}(${head.count}),`
+        }
+        document.write(str)
+      }
+
+      let list = new List()
+      for(let i =0 ;i < s.length; i++){`
+        list.insert(s[i])
+      }
+      list.traversal()
+    </script>
+  </body>
+</html>

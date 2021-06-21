@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+<script>
+  function move(){
+
+  }
+//   设计一个简单的链式调用，要求分别在1，3，4秒后打印出”1”, “2”, “3”
+
+// new Queue()
+
+// .task(1000, () => {console.log(1)})
+
+// .task(2000, () => {console.log(2)})
+
+// .task(1000, () => {console.log(3)})
+
+// .start()
+
+class Queue {
+  constructor(){
+    this.queue = []
+  }
+  task(time, fn){
+    this.queue.push({time,fn})
+    return this
+  }
+  async start(){
+    for(let i = 0; i < this.queue.length; i++){
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          this.queue[i].fn()
+          resolve()
+        },this.queue[i].time)
+      })
+    }
+  }
+}
+new Queue()
+
+.task(1000, () => {console.log(1)})
+
+.task(2000, () => {console.log(2)})
+
+.task(1000, () => {console.log(3)})
+
+.start()
+</script>
+
+</body>
+</html>
