@@ -1,0 +1,52 @@
+<!--
+ * @Author: Panda Pan panda.pan@pharmeyes.com
+ * @Date: 2024-01-10 13:31:30
+ * @LastEditors: Panda Pan panda.pan@pharmeyes.com
+ * @LastEditTime: 2024-01-10 13:41:45
+ * @FilePath: \interview\2023-beitong\拷贝structuredClone.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      list: [
+        {
+          code: 1,
+          name: 100
+        }
+      ],
+      data: {
+        show: false
+      },
+      name: '张三'
+    }
+    // 解构赋值-深度对象并不能深拷贝
+    const obj2 = { ...obj }
+    obj2.list[0].code = 2
+    console.log('obj', obj.list[0].code) // 2
+    console.log('obj2', obj2.list[0].code) // 2
+    // 结构赋值-对基础数据类型可以实现拷贝
+    obj2.name = '李四'
+    console.log('obj', obj.name) // 张三
+    console.log('obj2', obj2.name) // 李四
+    // 实现了基本的深拷贝
+    // const obj3 = JSON.parse(JSON.stringify(obj))
+    // obj3.list[0].code = 3
+    // console.log('obj', obj.list[0].code) // 1
+    // console.log('obj2', obj3.list[0].code) // 3
+    // 实现了基本的深拷贝
+    // const obj4 = structuredClone(obj)
+    // obj4.list[0].code = 4
+    // console.log('obj', obj.list[0].code) // 1
+    // console.log('obj2', obj4.list[0].code) // 4
+    // 可以换使用lodash的cloneDeep
+  </script>
+</body>
+</html>
